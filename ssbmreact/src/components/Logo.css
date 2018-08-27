@@ -1,0 +1,10 @@
+.nav__logo-container {
+    padding: 10px;
+    margin-left: 25px;
+}
+
+.site-logo {
+    height: 50px;
+    width: 50px;
+    background-color: pink;
+}
