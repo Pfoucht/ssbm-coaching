@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Routes from '../routes';
+
 import Nav from './Nav.js';
 import './App.css';
-import Landing from './Landing/Landing.js';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Nav />
-        <Landing />
-      </div>
-
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <Nav />
+    <Routes />
+  </div>
+)
 
 export default App;
