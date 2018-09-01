@@ -1,14 +1,15 @@
 import React from 'react';
-import './Landing.css';
-//import styles from './Landing.css';
+import styles from './Landing.css';
 import Header from './Header/Header';
 import Benefits from './Benefits/Benefits';
+import Auth from '../Auth/Auth';
 
 const landing = props => {
     return (
-        <div>
+        <div className="landing">
             <Header/>
             <Benefits/>
+            <Auth/>
         </div>
     );
 }
