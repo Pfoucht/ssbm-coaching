@@ -10,7 +10,9 @@
     border-top: 1px solid #ccc;
     border-left: 1px solid #ccc;
     font-size: 18px;
-    transition: all 800ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 800ms;
+    transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
+    transform: translateX(0);
 }
 
 
@@ -93,5 +95,5 @@
 
 
 .slidedRight{
-    transform: translateX(100%);
+    transform: translateX(101%);
 }

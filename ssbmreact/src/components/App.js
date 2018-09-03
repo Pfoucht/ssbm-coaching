@@ -1,14 +1,27 @@
 import React from 'react';
 import Routes from '../routes';
+import { connect } from 'react-redux';
 
-import Nav from './Nav.js';
+import NavContainer from '../containers/NavContainer.js';
 import './App.css';
 
-const App = () => (
+const App = (props) => (
   <div className="App">
-    <Nav />
+    <NavContainer/>
     <Routes />
   </div>
 )
+
+
+// Reference code
+// const mapStateToProps = state => ( {
+//   ...state
+// })
+
+// const mapDispatchToProps = dispatch => ({
+//   simpleAction: () => dispatch(simpleAction())
+// })
+
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 export default App;

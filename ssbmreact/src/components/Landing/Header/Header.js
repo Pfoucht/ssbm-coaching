@@ -6,7 +6,7 @@ const header = props => (
         <div className="container">
             <div className="containerLeft">
                 <h1 className="headingBig">Smash Bros Coaching</h1>
-                <h3 class="headingMedium">Find coaches.   Level up.  Compete.</h3>
+                <h3 className="headingMedium">Find coaches.   Level up.  Compete.</h3>
                 <p className="p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                 <button className="btn">Sign up</button>
             </div>
