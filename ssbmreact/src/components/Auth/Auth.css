@@ -1,5 +1,5 @@
 .authContainer{
-    position: absolute;
+    position: fixed;
     right: 0;
     width: 750px;
     background-color: #fff;
@@ -96,4 +96,8 @@
 
 .slidedRight{
     transform: translateX(101%);
+}
+
+.loading{
+    background-color: #eee;
 }

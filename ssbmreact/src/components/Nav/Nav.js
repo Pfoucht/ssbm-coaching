@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import './Nav.css';
-import Logo from './Logo';
-import Navigation from './Navigation';
-import Auth from './Auth/Auth';
+import Logo from './Logo/Logo';
+import Navigation from './Navigation/Navigation';
+import Auth from '../Auth/Auth';
 
 class Nav extends Component {
     constructor(props) {
@@ -23,7 +23,6 @@ class Nav extends Component {
                 <h1>{JSON.stringify(this.props)}</h1>
                 <Logo/>
                 <Navigation onClick={this.onClick}/>
-                <Auth onClick={this.onClick} navOpen={this.props.navOpen}/>
             </div>
         )
     }

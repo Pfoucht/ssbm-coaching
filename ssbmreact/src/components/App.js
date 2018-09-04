@@ -3,11 +3,13 @@ import Routes from '../routes';
 import { connect } from 'react-redux';
 
 import NavContainer from '../containers/NavContainer.js';
+import AuthContainer from '../containers/AuthContainer';
 import './App.css';
 
 const App = (props) => (
   <div className="App">
     <NavContainer/>
+    <AuthContainer/>
     <Routes />
   </div>
 )

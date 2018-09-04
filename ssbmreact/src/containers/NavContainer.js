@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { navAction } from '../actions/NavAction';
-
-
-import Nav from '../components/Nav'
+import { toggleAuthSlider } from '../store/actions/index';
+import Nav from '../components/Nav/Nav'
 
 class NavContainer extends Component {
     constructor(props) {
@@ -14,19 +12,15 @@ class NavContainer extends Component {
         return (
             <div>
                 <Nav 
-                navOpen={this.props.navReducer.navOpen}
-                navClick={this.props.navAction}/>
+                navClick={this.props.onAuthSlide}/>
             </div>
         )
     }
 }
 
-const mapStateToProps = state => ({
-    ...state
-})
 
 const mapDispatchToProps = dispatch => ({
-    navAction: () => dispatch(navAction())
+    onAuthSlide: () => dispatch(toggleAuthSlider())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavContainer);
+export default connect(null, mapDispatchToProps)(NavContainer);
