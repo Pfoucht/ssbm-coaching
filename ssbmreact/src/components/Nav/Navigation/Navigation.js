@@ -1,15 +1,15 @@
 import React from 'react';
-import './Navigation.css';
+import styles from './Navigation.css';
 
 const Navigation = (props) => {
     return (
         <nav>
-            <ul className="main-nav__list">
-                <li className="main-nav__item">
-                    <a className="main-nav__link" onClick={props.onClick}>Sign In</a>
+            <ul className={styles.list}>
+                <li className={styles.item}>
+                    <a className={styles.link} onClick={props.onClick}>Sign In</a>
                 </li>
-                <li className="main-nav__item">
-                    <a className="main-nav__link" href="/">Register</a>
+                <li className={styles.item}>
+                    <a className={styles.link} href="/">Register</a>
                 </li>
             </ul>
         </nav>

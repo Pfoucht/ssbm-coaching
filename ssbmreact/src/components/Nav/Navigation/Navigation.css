@@ -1,18 +1,19 @@
-.main-nav__list {
+.list {
     display: inline-block;
     margin-right: 15px;
     font-size: 0;
 }
 
-.main-nav__item {
+.item {
     display: inline-block;
 }
 
-.main-nav__link {
+.link {
     padding: 10px;
     font-size: 1.5rem;
     font-size: 1rem;
     color: #4A4A4A;
     text-decoration: none;
+    cursor: pointer;
 }
 

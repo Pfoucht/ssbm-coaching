@@ -1,10 +1,10 @@
 import React from 'react';
-import './Logo.css'
+import styles from './Logo.css'
 
 const Logo = () => {
     return (
-        <div className="nav__logo-container">
-            <div className="site-logo"></div>
+        <div className={styles.container}>
+            <div className={styles.logo}></div>
         </div>
     )
 }

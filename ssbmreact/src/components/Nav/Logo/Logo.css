@@ -1,9 +1,9 @@
-.nav__logo-container {
+.container {
     padding: 10px;
     margin-left: 25px;
 }
 
-.site-logo {
+.logo {
     height: 50px;
     width: 50px;
     background-color: pink;

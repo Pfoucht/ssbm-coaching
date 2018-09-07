@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './Nav.css';
+import styles from './Nav.css';
 import Logo from './Logo/Logo';
 import Navigation from './Navigation/Navigation';
 import Auth from '../Auth/Auth';
@@ -19,7 +19,7 @@ class Nav extends Component {
 
     render() {
         return (
-            <div className="main-nav">
+            <div className={styles.mainNav}>
                 <h1>{JSON.stringify(this.props)}</h1>
                 <Logo/>
                 <Navigation onClick={this.onClick}/>

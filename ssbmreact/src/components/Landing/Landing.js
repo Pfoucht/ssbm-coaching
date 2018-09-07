@@ -5,7 +5,7 @@ import Benefits from './Benefits/Benefits';
 
 const landing = props => {
     return (
-        <div className="landing">
+        <div className={styles.landing}>
             <Header/>
             <Benefits/>
         </div>

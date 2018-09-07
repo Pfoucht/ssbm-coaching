@@ -1,4 +1,4 @@
-.profile__container{
+.profileContainer{
     background-color: #eee;
     width: 100%;
     min-height: 100vh;
@@ -7,16 +7,16 @@
     justify-content: space-between;
 }
 
-.profile__left{
+.profileLeft{
     width: 40%;
     max-width: 550px;
 }
 
-.profile__right{
+.profileRight{
     width: 58%;
 }
 
-.profile__box{
+.profileBox{
     background-color: #fff;
     width: 100%;
     box-sizing: border-box;
@@ -29,7 +29,7 @@
 
 
 
-.profile__pic{
+.profilePic{
     display: block;
     margin: 0 auto;
     margin-bottom: 10px;
@@ -39,13 +39,13 @@
     object-fit: cover;
 }
 
-.profile__name{
+.profileName{
     font-weight: 900;
     font-size: 24px;
     padding: 10px 0;
 }
 
-.profile__btn{
+.profileBtn{
     padding: 10px 14px;
     font-size: 18px;
     background-color: #550fff;
@@ -57,17 +57,17 @@
     cursor: pointer;
 }
 
-.profile__btn--light{
+.profileBtnLight{
     color: #550fff;
     border: 1px solid #550fff;
     background-color: #fff;
 }
 
-.profile__list{
+.profileList{
 
 }
 
-.profile__item{
+.profileItem{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,7 +79,7 @@
     text-align: center;
 }
 
-.profile__p{
+.profileP{
     line-height: 25px;
     font-weight: 400;
     color: #444;
@@ -89,13 +89,13 @@
 
 /* HERO CSS  */
 
-.hero__header{
+.heroHeader{
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 15px;
 }
 
-.hero__container{
+.heroContainer{
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
@@ -112,7 +112,7 @@
 
 /* USER REVIEW CSS */
 
-.profle__reviews{
+.profleReviews{
     background: #fff;
     padding: 10px 20px;
     border: 1px solid #ccc;
@@ -120,44 +120,45 @@
     margin: 30px 0;
 }
 
-.reivew__header{
+.reivewHeader{
     border-bottom: 2px solid #eee;
     padding: 20px 0;
 }
 
-.user__review{
+.userReview{
     background-color: #fff;
-    padding: 20px 0;
+    padding: 15px 10px;
     display: flex;
     border-bottom: 2px solid #eee;
+    align-items: flex-start;
 }
 
-.user__review:last-child{
+.userReview:last-child{
     border-bottom: none;
 }
 
-.star__container{
+.starContainer{
     padding: 8px 0 0 0;
 }
-.review__star{
+.reviewStar{
     color: #550eff;
     padding: 0 2px;
 }
-.review__pic{
+.reviewPic{
     height: 35px;
     width: 35px;
     border-radius: 50%;
     margin-right: 20px;
 }
 
-.review__p{
+.reviewP{
     line-height: 23px;
-    padding: 10px 0;
+    padding: 5px 0;
     font-size: 16px;
     color: #444;
 }
 
-.review__date{
+.reviewDate{
     color: #666;
-    font-size: 14px;
+    font-size: 12px;
 }
