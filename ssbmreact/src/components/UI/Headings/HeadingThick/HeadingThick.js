@@ -1,8 +1,8 @@
 import React from 'react';
-import './HeadingThick.css';
+import styles from './HeadingThick.css';
 
 const headingThick = props => (
-        <h1 className="headingThick">{props.children}</h1>
+        <h1 className={styles.headingThick}>{props.children}</h1>
 )
 
 export default headingThick;
