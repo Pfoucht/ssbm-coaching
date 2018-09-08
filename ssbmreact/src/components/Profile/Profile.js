@@ -1,102 +1,157 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './Profile.css';
-import Stars from './Stars/Stars';
-
+import Reviews from './Reviews/Reviews';
+import {FiClock} from 'react-icons/fi';
 const pic = require('../../assets/selfie.JPG');
 
-const trophy1 = require('../../assets/FoxTrophyWiiU.png');
-const trophy2 = require('../../assets/IceClimbersTrophyWiiU.png');
-const trophy3 = require('../../assets/MarthTrophyWiiU.png');
-const trophy4 = require('../../assets/SheikAltTrophyWiiU.png');
 
-const profile = props => {
-    return (
-        <div className={styles.profileContainer}>
-           <div className={styles.profileLeft}>
-            <div className={styles.profileBox}>
-                <img className={styles.profilePic} src={pic} />
-                <h3 className={styles.profileName}>YamiTamashi</h3>
-                <p>I can coach you to upper grandmaster level</p>
-                <div>
-                    <button className={styles.profileBtn}>Contact Me</button>
-                    <button className={[styles.profileBtn, styles.profileBtnLight].join(' ')}>Get Details</button>
-                </div>
-                <hr/>
-                <ul className={styles.profileList}>
-                    <li className={styles.profileItem}><span>Location:</span> <strong>Bellevue, WA</strong></li>
-                    <li className={styles.profileItem}><span>Smash Rank</span> <strong>Grandmaster</strong></li>
-                    <li className={styles.profileItem}><span>Main Hero:</span> <strong>Captain Falcon</strong></li>
-                    <li className={styles.profileItem}><span>Smashing since:</span> <strong>2014</strong></li>
-                </ul>
+class Profile extends Component {
+
+    state = {
+        view: 'profile'
+    }
+
+    render(){
+        let navClasses = [styles.aLine];
+        if(this.state.view === 'reviews'){
+            navClasses.push(styles.spanReview)
+        }else if(this.state.view === 'gigs'){
+            navClasses.push(styles.spanGigs)
+        }
+
+        let content = (
+            <div className={styles.flexbox}>
+            <div className={styles.flexOneThird}>
+            <div className={styles.box}>
+                <h3 className={styles.headingSmall}>Connect</h3>
+                <li className={styles.item2}>
+                    <img src="https://nhsbtdbe.blob.core.windows.net/umbraco-assets-corp/1226/facebook-icon-preview-1.png" className={styles.listIcon}/>
+                    Facebook
+                </li>
+                <li className={styles.item2}>
+                    <img src="https://www.bernardmarr.com/img/case-study/logos/twitter.png" className={styles.listIcon}/>
+                    Twitter
+                </li>
+                <li className={styles.item2}>
+                    <img src="https://vignette.wikia.nocookie.net/fallout/images/4/43/Twitch_icon.png/revision/latest?cb=20180507131302" className={styles.listIcon}/>
+                    Twitch
+                </li>
+                <li className={styles.item2}>
+                    <img src="https://lh3.googleusercontent.com/Ned_Tu_ge6GgJZ_lIO_5mieIEmjDpq9kfgD05wapmvzcInvT4qQMxhxq_hEazf8ZsqA" className={styles.listIcon}/>
+                    Youtube
+                </li>                
             </div>
-            <div className={styles.profileBox}>
-                    <h3 className={styles.profileName}>Bio</h3>
-                    <p className={styles.profileP}>loremlorem lorem. I am a generated response written by camden. Yami has been smahing since he was 3 yrs old. he can get you to level 99 in three days.</p>
-                <hr/>
-                    <h3 className={styles.profileName}>Bio</h3>
-                    <p className={styles.profileP}>loremlorem lorem. I am a generated response written by camden. Yami has been smahing since he was 3 yrs old. he can get you to level 99 in three days.</p>
-                </div>
-           </div> 
+            <div className={styles.box}>
+                <h3 className={styles.headingSmall}>Connect</h3>
+                <li className={styles.item2}>
+                    <img src="https://nhsbtdbe.blob.core.windows.net/umbraco-assets-corp/1226/facebook-icon-preview-1.png" className={styles.listIcon}/>
+                    Facebook
+                </li>
+                <li className={styles.item2}>
+                    <img src="https://www.bernardmarr.com/img/case-study/logos/twitter.png" className={styles.listIcon}/>
+                    Twitter
+                </li>
+                <li className={styles.item2}>
+                    <img src="https://vignette.wikia.nocookie.net/fallout/images/4/43/Twitch_icon.png/revision/latest?cb=20180507131302" className={styles.listIcon}/>
+                    Twitch
+                </li>
+                <li className={styles.item2}>
+                    <img src="https://lh3.googleusercontent.com/Ned_Tu_ge6GgJZ_lIO_5mieIEmjDpq9kfgD05wapmvzcInvT4qQMxhxq_hEazf8ZsqA" className={styles.listIcon}/>
+                    Youtube
+                </li>                
+            </div>
+            </div>
+            <div className={styles.flexTwoThird}>
+                <Reviews/>
+            
+            </div>
+            </div>  
+        );
 
-           <div className={styles.profileRight}>
-                <div className={styles.profileHeros}>
-                    <div className={styles.heroHeader}>
-                        <h2 className={styles.profileName}>Yamis Heros</h2>
-                    </div>
-                    <div className={styles.heroContainer}>
-                        <img src={trophy1} className={styles.trophy}/>
-                        <img src={trophy2} className={styles.trophy}/>
-                        <img src={trophy3} className={styles.trophy}/>
-                        <img src={trophy4} className={styles.trophy}/>
-                        <img src={trophy1} className={styles.trophy}/>
+        if(this.state.view === 'gigs'){
+            content = (
+                <div className={styles.flexbox}>
+                    <div className={styles.card}>One on One Coaching</div>
+                    <div className={styles.card}>Doubles Coaching</div>
+                    <div className={styles.card}>Fox Tech Skill Training</div>
+                    <div className={styles.card}>Moonwalking</div>
                 </div>
-                </div>
+            )
+        }else if(this.state.view === 'reviews'){
+            content = (
+                <Reviews/>
+            )
+        }
 
-                <div className={styles.profileReviews}>
-                    <div className={styles.reviewHeader}>
-                    <h3 className={styles.profileName}>Yamis Reviews</h3>
+        
+
+        return (
+            <div className={styles.wrapper}>
+            <div className={styles.profileContainer}>
+            <header className={styles.header}>
+                    <div>
+                        <img src={pic} className={styles.profilePic} />
                     </div>
-                    <div style={{border: '1px solid #ccc'}}>
-                    <div className={styles.userReview}>
-                            <img src={pic} className={styles.reviewPic}/>
-                            <div className={styles.reviewContent}>
-                                <div style={{display: 'flex', alignItems: 'center'}}>
-                                <h4 style={{marginRight: '8px'}}>CamHeichou</h4>
-                                <div className={styles.starContainer} style={{paddingTop: 0}}>
-                                    <Stars/>
-                                </div> 
-                                </div>
-                                <p className={styles.reviewP}>Yami Tamashi is probably the equivalent of a bronze Hanzo player. He had difficulty teaching offledge wave shines. His Sheik is alright though.</p>
-                                <span className={styles.reviewDate}>2 weeks ago</span>
-                            </div>
+    
+                    <div className={styles.info}>
+                        <h2 className={styles.profileName}>Yami Tamashi</h2>
+                        <p className={styles.p}>Super Smash Bros Melee</p>
+                        <p className={styles.p}>20xx Fox coach</p>
+                        <div>
+                            <button className={styles.profileBtn}>Contact Me</button>
+                            <button className={[styles.profileBtn, styles.profileBtnLight].join(' ')}>Get Details</button>
+                        </div>
                     </div>
-                    <div className={styles.userReview}>
-                            <img src={pic} className={styles.reviewPic}/>
-                            <div className={styles.reviewContent}>
-                                <h4>CamHeichou</h4>
-                                <div className={styles.starContainer}>
-                                    <Stars/>
-                                </div> 
-                                <p className={styles.reviewP}>Yami Tamashi is probably the equivalent of a bronze Hanzo player. He had difficulty teaching offledge wave shines. His Sheik is alright though.</p>
-                                <span className={styles.reviewDate}>2 weeks ago</span>
+                    <div className={styles.headerRight}>
+                        <div>
+                            <ul className={styles.list}>
+                            <li className={styles.item}>
+                            <div className={styles.itemLeft}>
+                            <img src="https://vignette.wikia.nocookie.net/mario/images/b/b8/Bob-omb_Buddy%2C_Super_Mario_Galaxy_2.png/revision/latest?cb=20121106193912" className={styles.listIcon}/>
+                            Availability: 
                             </div>
+                            <strong>Full Time</strong></li>
+                            <li className={styles.item}>
+                            <div className={styles.itemLeft}>
+                            <img src="https://vignette.wikia.nocookie.net/diepio/images/8/8e/Shine_melee.png/revision/latest?cb=20160727205952" className={styles.listIcon}/>
+                            Location: 
+                            </div>
+                            <strong>Bellevue Wa</strong></li>
+                            <li className={styles.item}>
+                            <div className={styles.itemLeft}>
+                            <img src="https://www.smashladder.com/images/smash/tiers/grandsmasher.png" className={styles.listIcon}/>
+                            Smash Rank: 
+                            </div>
+                            <strong>Grandmaster</strong></li>
+
+                            <li className={styles.item}>
+                            <div className={styles.itemLeft}>
+                            <img src="https://www.models-resource.com/resources/big_icons/6/5380.png" className={styles.listIcon}/>
+                            Main Character: 
+                            </div>
+                            <strong>Marth</strong></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div className={styles.userReview}>
-                            <img src={pic} className={styles.reviewPic}/>
-                            <div className={styles.reviewContent}>
-                                <h4>CamHeichou</h4>
-                                <div className={styles.starContainer}>
-                                    <Stars/>
-                                </div> 
-                                <p className={styles.reviewP}>Yami Tamashi is probably the equivalent of a bronze Hanzo player. He had difficulty teaching offledge wave shines. His Sheik is alright though.</p>
-                                <span className={styles.reviewDate}>2 weeks ago</span>
-                            </div>
-                    </div>        
-                    </div>                                      
+            </header> 
+
+                <div className={styles.splitter}>
+                    <span className={[styles.splitterSpan, this.state.view === 'profile' ? styles.spanActive : null].join(' ')} onClick={() => this.setState({view: 'profile'})}>
+                        Info
+                    </span>
+                    <span className={[styles.splitterSpan, this.state.view === 'reviews' ? styles.spanActive : null].join(' ')} onClick={() => this.setState({view: 'reviews'})} >
+                        Reviews
+                    </span>
+                    <span className={[styles.splitterSpan, this.state.view === 'gigs' ? styles.spanActive : null].join(' ')} onClick={() => this.setState({view: 'gigs'})} >
+                    Gigs
+                </span>
+                <div className={navClasses.join(' ')}></div>
                 </div>
-           </div>
-        </div>
-    );
+                {content}
+            </div>
+            </div>
+        );
+    }
 }
 
-export default profile;
+export default Profile;

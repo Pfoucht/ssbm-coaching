@@ -1,32 +1,48 @@
 .profileContainer{
     background-color: #eee;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.wrapper{
+    background-color: #eee;
+    height: 100vh;
+    padding: 45px 0;
+}
+
+.header{
     width: 100%;
-    min-height: 100vh;
-    padding: 80px 120px;
+    padding: 30px 30px;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 1px solid #ccc;
+    /* box-shadow: 2px 4px 8px #ccc; */
+}
+
+.headerRight{
+    width: 400px;
+    padding: 0 20px;
+}
+
+.item{
     display: flex;
     justify-content: space-between;
+    padding: .5rem;
+    align-items: center;
 }
 
-.profileLeft{
-    width: 40%;
-    max-width: 550px;
+.itemLeft{
+    display: flex;
+    align-items: center;
 }
 
-.profileRight{
-    width: 58%;
+.listIcon{
+    height: 25px;
+    width: 25px;
+    margin-right: 3px;
 }
-
-.profileBox{
-    background-color: #fff;
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 3px;
-    padding: 30px 40px;
-    text-align: left;
-    margin-bottom: 40px;
-    border: 1px solid #ccc;
-}
-
 
 
 .profilePic{
@@ -34,9 +50,18 @@
     margin: 0 auto;
     margin-bottom: 10px;
     border-radius: 50%;
-    height: 200px;
-    width: 200px;
+    height: 125px;
+    width: 125px;
     object-fit: cover;
+    margin-right: 20px;
+}
+
+.p{
+    padding: 5px 0;
+}
+.info{
+    border-right: 1px solid #ccc;
+    flex: 1;
 }
 
 .profileName{
@@ -47,15 +72,17 @@
 
 .profileBtn{
     padding: 10px 14px;
-    font-size: 18px;
+    font-size: 16px;
     background-color: #550fff;
     color: #fff;
     border: none;
     border-radius: 3px;
-    margin: 20px 10px;
-    width: 40%;
+    margin: 20px 0;
+    margin-right: 20px;
     cursor: pointer;
 }
+
+
 
 .profileBtnLight{
     color: #550fff;
@@ -87,78 +114,106 @@
 
 
 
-/* HERO CSS  */
 
-.heroHeader{
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 15px;
-}
 
-.heroContainer{
+/* flex stuff */
+
+.flexbox{
     display: flex;
-    justify-content: space-evenly;
     align-items: flex-start;
-    padding: 30px 40px;
+    justify-content: space-between;
+    animation: .4s fadeIn ease-out both;
 }
 
-.trophy{
-    width: 20%;
+.flexOneThird{
+    width: 25.333333%;
 }
 
+.flexTwoThird{
+    width: 70.666666%
+}
 
-
-
-
-/* USER REVIEW CSS */
-
-.profleReviews{
-    background: #fff;
-    padding: 10px 20px;
+.box{
+    background-color: #fff;
+    padding: 20px;
     border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.item2{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.item2:hover{
+    text-decoration: underline;
+}
+
+.item2 img{
+    margin-right: 6px;
+}
+
+
+
+
+
+
+.card{
+    padding: 30px;
+    background-color: #fff;
     border-radius: 3px;
-    margin: 30px 0;
+    width: 25%;
+    margin: 0 20px;
+    height: 240px;
+    text-align: center;
+    border: 1px solid #ccc;
 }
 
-.reivewHeader{
-    border-bottom: 2px solid #eee;
-    padding: 20px 0;
-}
+/* SPLITTER STUFF */
 
-.userReview{
-    background-color: #fff;
-    padding: 15px 10px;
-    display: flex;
-    border-bottom: 2px solid #eee;
-    align-items: flex-start;
-}
-
-.userReview:last-child{
-    border-bottom: none;
-}
-
-.starContainer{
-    padding: 8px 0 0 0;
-}
-.reviewStar{
-    color: #550eff;
-    padding: 0 2px;
-}
-.reviewPic{
+.splitter{
+    margin: 40px 0 30px 0;
+    border-bottom: 1px solid #cecfd0;
     height: 35px;
-    width: 35px;
-    border-radius: 50%;
-    margin-right: 20px;
+    position: relative;
+    display: flex;
 }
 
-.reviewP{
-    line-height: 23px;
-    padding: 5px 0;
-    font-size: 16px;
-    color: #444;
+
+.splitterSpan{
+    padding: 11.5px 0;
+    color: #555;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: .2s;
+    border-bottom: 2px solid transparent;
+    width: 60px;
+    text-align: center;
+    
 }
 
-.reviewDate{
-    color: #666;
-    font-size: 12px;
+.spanActive{
+    color: #550fff;
+}
+
+.aLine{
+    position: absolute;
+    bottom: -1px;
+    height: 2px;
+    width: 60px;
+    background-color: #550fff;
+    transition: .3s;
+}
+
+
+.spanReview{
+    transform: translateX(70px);
+}
+
+.spanGigs{
+    transform: translate(140px);
 }

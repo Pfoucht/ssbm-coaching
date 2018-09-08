@@ -1,0 +1,70 @@
+/* USER REVIEW CSS */
+
+.profileReviews{
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin:  0;
+    border: 1px solid #ccc;
+}
+
+.reviewHeader{
+    border-bottom: 1px solid #ccc;
+    padding: 20px 20px;
+    background-color: #fff;
+    margin: 0 -20px;
+}
+
+.profileName{
+    font-size: 18px;
+}
+
+.userReview{
+    background-color: #fff;
+    padding: 15px 10px;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    align-items: flex-start;
+}
+
+.userReview:last-child{
+    border-bottom: none;
+}
+
+.starContainer{
+    padding: 8px 0 0 0;
+    display: flex;
+    align-items: center;
+}
+.reviewStar{
+    color: #550eff;
+    padding: 0 2px;
+}
+.reviewPic{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.reviewP{
+    line-height: 23px;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #444;
+}
+
+.reviewDate{
+    color: #666;
+    font-size: 12px;
+}
+
+.score{
+    display: inline-block;
+    margin-right: 7px;
+    background-color: rgb(85, 15, 255);
+    color: #fff;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 14px;
+}
