@@ -11,6 +11,8 @@ class create extends Component {
         dropdownOpen: false,
         gameValue: 'Choose your game',
         character: '',
+        rank: '',
+        pricing: '',
         charArr : []
 
     }
@@ -82,7 +84,7 @@ class create extends Component {
                 <div className={styles.box}>
                     <div className={styles.flex}>
                         <div className={styles.span}>GIG Title</div>
-                        <textarea className={styles.textarea} placeholder="Gig Title" />
+                        <textarea className={styles.textarea} placeholder="Professional doubles fox tech coaching" />
                     </div>
                     <div className={styles.flex}>
                     <span className={styles.span}>Game</span>
@@ -97,7 +99,20 @@ class create extends Component {
                     </div>
                 </div>
                 <div className={styles.flex}>
-                    <span className={styles.span}>Characters</span>
+                    <span className={styles.span}>Rank</span>
+                    <input  className={styles.input} value={this.state.rank} placeholder="Grandmaster" onChange={(e) => this.setState({rank: e.target.value})}/>
+                </div>
+
+                <div className={styles.flex}>
+                    <span className={styles.span}>Pricing</span>
+                    <input  className={styles.input} value={this.state.pricing} placeholder="$5/hr" onChange={(e) => this.setState({pricing: e.target.value})}/>
+                </div>
+
+                <div className={styles.flex}>
+                    <div>
+                        <span className={styles.span}>Characters</span>
+                        <span className={styles.hint}>Enter comma to separate characters.</span>
+                    </div>
                     <div className={styles.charEditor}>
                     {chars}
                     <input  className={styles.charInput} value={this.state.character} onChange={this.charChangeHandler}/>
