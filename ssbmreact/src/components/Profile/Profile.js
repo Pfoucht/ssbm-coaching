@@ -62,8 +62,22 @@ class Profile extends Component {
             </div>
             </div>
             <div className={styles.flexTwoThird}>
-                <Reviews/>
-            
+                <div className={styles.box}>
+                    <h2 className={styles.sHeader}>Bio</h2>
+                    <ul className={styles.bioList}>
+                    <li className={styles.bioItem}>
+                    <p>lorem  lorem lorem dsflksdfjlalsdf lorem lorem lorem lorem  lorem lorem dsflksdfjlalsdf lorem lorem lorem lorem  lorem lorem dsflksdfjlalsdf lorem lorem lorem lorem  lorem lorem dsflksdfjlalsdf lorem lorem lorem lorem  lorem lorem dsflksdfjlalsdf lorem lorem loremlorem  lorem lorem dsflksdfjlalsdf lorem lorem lorem</p>
+                    </li>
+                    </ul>
+                </div>
+                <div className={styles.box}>
+                    <h2 className={styles.sHeader}>Bio</h2>
+                    <ul className={styles.bioList}>
+                    <li className={styles.bioItem}>
+                    <p>lorem  lorem lorem dsflksdfjlalsdf lorem lorem lorem lorem  lorem lorem dsflksdfjlalsdf lorem lorem lorem lorem  lorem lorem dsflksdfjlalsdf lorem lorem lorem lorem  lorem lorem dsflksdfjlalsdf lorem lorem lorem lorem  lorem lorem dsflksdfjlalsdf lorem lorem loremlorem  lorem lorem dsflksdfjlalsdf lorem lorem lorem</p>
+                    </li>
+                    </ul>
+                </div>            
             </div>
             </div>  
         );

@@ -2,21 +2,41 @@
 
 .profileReviews{
     background: #fff;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border-radius: 3px;
     margin:  0;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+
+}
+
+.flexbox{
+    display: flex;
+    align-items: center;
+}
+
+.total{
+    color: #777;
+    margin-left: 10px;
 }
 
 .reviewHeader{
-    border-bottom: 1px solid #ccc;
-    padding: 20px 20px;
-    background-color: #fff;
-    margin: 0 -20px;
+    /* border-bottom: 1px solid #ccc; */
+    padding: 15px;
+    background-color: #eee;
+    margin: 0 -10px;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .profileName{
     font-size: 18px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 20px;
+    color: #444;
 }
 
 .userReview{
@@ -35,14 +55,15 @@
     padding: 8px 0 0 0;
     display: flex;
     align-items: center;
+    margin: 4px 0;
 }
 .reviewStar{
     color: #550eff;
     padding: 0 2px;
 }
 .reviewPic{
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     margin-right: 20px;
 }
@@ -50,7 +71,7 @@
 .reviewP{
     line-height: 23px;
     padding: 5px 0;
-    font-size: 16px;
+    font-size: 14px;
     color: #444;
 }
 
@@ -59,6 +80,13 @@
     font-size: 12px;
 }
 
+.reviewName{
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
 .score{
     display: inline-block;
     margin-right: 7px;
@@ -66,5 +94,5 @@
     color: #fff;
     padding: 3px;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: 11px;
 }

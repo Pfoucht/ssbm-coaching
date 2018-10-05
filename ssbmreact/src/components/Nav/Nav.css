@@ -5,4 +5,92 @@
     /* padding: 15px 0; */
     background-color: #FFFFFF;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .18);
+    padding: 15px 50px;
+    border-bottom: 1px solid #efefef;
+}
+
+.brand{
+    font-size: 30px;
+    color: #555;
+    font-weight: 900;
+    margin-right: 20px;
+}
+
+.left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    align-items: stretch;
+    margin-top: 4px;
+    position: relative;
+}
+
+.input{
+    padding: 8px 10px 8px 28px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    width: 265px;
+    font-size: 14px;
+    margin-right: 0;
+    height: 32px;
+    box-sizing: border-box;
+    position: relative;
+    color: #807575;
+}
+
+.searchIcon{
+    position: absolute;
+    left: 6px;
+    z-index: 20;
+    top: 8px;
+}
+
+.input:focus{
+    outline: none;
+    border: 1px solid #ababab;
+}
+
+.input::placeholder{
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.input::after{
+    background: url('http://www.stickpng.com/assets/images/585e4ae1cb11b227491c3393.png');
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: 0;
+    top: 0;
+    content: '';
+}
+
+.btn{
+    padding: 4px 25px;
+    background-color: rgb(85, 15, 255);
+    color: #fff;
+    margin-left: -3px;
+    border: 0;
+    font-size: 14px;
+    cursor: pointer;
+    height: 32px;
+    box-sizing: border-box;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    position: relative;
+    z-index: 10;
+}
+
+.btn:active, .btn:focus, .btn:hover{
+    outline: none;
+}
+
+.link{
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
 }

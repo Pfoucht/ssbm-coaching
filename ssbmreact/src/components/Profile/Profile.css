@@ -138,6 +138,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     margin-bottom: 15px;
+    position: relative;
 }
 
 .item2{
@@ -216,4 +217,38 @@
 
 .spanGigs{
     transform: translate(140px);
+}
+
+
+
+
+/*  BIO LIST */
+.bioList{
+    list-style: none;
+}
+
+.bioItem{
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0;
+}
+
+.bioItem p{
+    flex: 1
+}
+
+.bioItem span{
+    width: 150px;
+}
+
+.sHeader{
+    /* background-color: #550fff;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 20px; */
+    font-size: 18px;
+    border-radius: 3px;
+    border-top-left-radius: 0;
 }
