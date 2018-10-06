@@ -5,13 +5,27 @@ import { IconContext } from 'react-icons';
 
 class Compose extends Component {
     state = {
+        content: ''
+    }
 
+    sendMessage = () => {
+        this.props.sendMessage(
+            {
+                username: 'CF',
+                name: 'CamHeichou',
+                date: 'Jan 01, 10:30',
+                content: this.state.content
+            }
+        );
+        this.setState({
+            content: ''
+        })
     }
 
     render(){
         return (
             <div>
-                <textarea className={styles.textarea}/>
+                <textarea className={styles.textarea} value={this.state.content} onChange={(e) => this.setState({content: e.target.value})}/>
                 <div className={styles.composeFooter}>
                     <div>
                         <IconContext.Provider value={{color: '#999', size: '1rem'}}>
@@ -22,7 +36,7 @@ class Compose extends Component {
                     </div>
 
                     <div>
-                        <span className={styles.send}>Send</span>
+                        <span onClick={this.sendMessage} className={styles.send}>Send</span>
                     </div>
                 </div>
             </div>

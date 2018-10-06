@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './Inbox.css';
 import {FaEllipsisH, FaCaretDown} from 'react-icons/fa'
 import { IconContext } from 'react-icons';
 import Message from './Message/Message';
 import Compose from './Compose/Compose';
+import Contact from './Contact/Contact';
+import About from './About/About';
 
-const inbox = props => {
+class Inbox extends Component {
+
+    componentDidMount(){
+        let objDiv = document.getElementById("msgContainer");
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
+
+    sendMsgHandler = msg => {
+        this.props.sendMessage(msg);
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        if(prevProps.messages !== this.props.messages){
+            let objDiv = document.getElementById("msgContainer");
+            objDiv.scrollTop = objDiv.scrollHeight;
+        }
+    }
+
+
+    render(){
+        let messages = this.props.messages.map(el => {
+            return <Message username={el.username} name={el.name} date={el.date} content={el.content}/>
+        })
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
@@ -20,18 +44,8 @@ const inbox = props => {
                     </span>
                     </div>
                     <div className={styles.convoBottom}>
-                        <div className={styles.contact}>
-                            <span>
-                                <span className={styles.profile}>CF</span>
-                            </span>
-                            <span className={styles.contactInfo}>
-                                <strong className={styles.contactName}>CamHeichou</strong>
-                                <p className={styles.trunc}>Hey, I have some news...</p>
-                            </span>
-                            <span className={styles.date}>
-                                Sep 26
-                            </span>
-                        </div>
+                        <Contact username="BG" name="Bill Gates" date="Aug 31" trunc="Cam, I am considering building..."/>
+                        <Contact active={true} username="YT" name="YamiTamashi" date="Sep 26" trunc="Would you consider coaching..."/>
                     </div>
                 </div>
 
@@ -53,34 +67,15 @@ const inbox = props => {
 
                     <div className={styles.msgBottomWrapper}>
                         <div className={styles.msgBottom}>
-                        <Message/>
+                        <div className={styles.msgContainer} id="msgContainer">
+                            {messages}
+                        </div>
                         <footer className={styles.footer}>
-                            <Compose/>
+                            <Compose sendMessage={this.sendMsgHandler}/>
                         </footer>
                         </div>
                         <div className={styles.msgBottomRight} style={{textAlign: 'center'}}>
-                            <strong>About</strong>
-                            <span className={styles.profileAbout} style={{margin: '20px auto'}}>CF</span>
-                            <span>CamHeichou</span>
-                            <ul className={styles.list}>
-                                <li className={styles.item}>
-                                    <span>Twitter</span>
-                                    <strong>@CamHeichou</strong>
-                                </li>                            
-                                <li className={styles.item}>
-                                    <span>Game</span>
-                                    <strong>Overwatch</strong>
-                                </li>
-                                <li className={styles.item}>
-                                    <span>Rank</span>
-                                    <strong>Grandmaster</strong>
-                                </li>
-
-                                <li className={styles.item}>
-                                    <span>From</span>
-                                    <strong>Washington</strong>
-                                </li>
-                            </ul>
+                            <About/>
                         </div>
                     </div>
                 </div>
@@ -89,4 +84,5 @@ const inbox = props => {
         </div>
     );
 }
-export default inbox;
+}
+export default Inbox;

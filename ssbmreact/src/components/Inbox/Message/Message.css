@@ -6,6 +6,10 @@
     display: flex;
 }
 
+.message:not(:last-child){
+    border-bottom: 1px solid #efefef;
+}
+
 .message:hover{
     background-color: #efefef;
 }
@@ -32,7 +36,7 @@
 }
 
 .userContent{
-    line-height: 140%;
+    line-height: 145%;
     max-width: 600px;
     margin: 5px 0 -5px;
     max-width: 540px;
@@ -41,6 +45,8 @@
     white-space: pre-line;
     color: #444;
     font-weight: 400;
+    color: #444;
+    font-size: 13px;
 }
 
 

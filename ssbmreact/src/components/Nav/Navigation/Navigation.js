@@ -22,10 +22,10 @@ const Navigation = (props) => {
             <Link to="/" className={styles.link} onClick={props.onClick}>Home</Link>
             </li>            
             <li className={styles.item}>
-            <Link to="/browse" className={styles.link} onClick={props.onClick}>Browse</Link>
+            <Link to="/browse" className={styles.link} >Browse</Link>
             </li>
             <li className={styles.item}>
-                <a className={styles.link} onClick={props.onClick}>Messages</a>
+                <Link to="/inbox" className={styles.link} >Messages</Link>
             </li>
             <li className={[styles.item, styles.profile].join(' ')}>
                 <img src={pic} className={styles.pic} />

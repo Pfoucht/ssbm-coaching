@@ -68,6 +68,10 @@
     flex: 1;
 }
 
+.msgContainer{
+    overflow-y: auto;
+}
+
 .msgBottomRight{
     border-left: 1px solid rgb(236, 236, 236);
     width: 300px;
@@ -99,82 +103,5 @@
 }
 
 
-/* contact stuff */
-
-.contact{
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px 15px;
-    border-bottom: 1px solid #eaeaea;
-    cursor: pointer;
-    align-items: center;
-}
-
-.contact:hover{
-    background-color: #eaeaea;
-}
-
-.profile{
-    background-color: #eaeaea;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    margin: 8px 20px 0 0;
-    padding: 10px;
-    font-size: 18px;
-}
-
-.date{
-    font-size: 11px;
-    color: #777;
-}
-
-.contactName{
-    margin: 0;
-    margin-bottom: 6px;
-    font-size: 14px;
-    display: block;
-}
-
-.contactInfo{
-    flex: 2 2 auto;
-}
-
-.trunc{
-    font-size: 13px;
-    color: #666;
-}
 
 
-
-
-
-/* ABOUT SECTION */
-
-.list{
-    list-style: none;
-    margin-top: 30px;
-}
-
-.item{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    color: #666;
-    font-size: 14px;
-}
-
-.profileAbout{
-    height: 50px;
-    width: 50px;
-    font-size: 24px;
-    padding: 10px;
-    border-radius: 50%;
-    background-color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center
-}

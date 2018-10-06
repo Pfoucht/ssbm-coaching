@@ -1,0 +1,52 @@
+.contact{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 15px;
+    border-bottom: 1px solid #eaeaea;
+    cursor: pointer;
+    align-items: center;
+}
+
+.active{
+    background-color: #eee;
+}
+
+.contact:hover{
+    background-color: #eaeaea;
+}
+
+.profile{
+    background-color: #eaeaea;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin: 8px 20px 0 0;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.date{
+    font-size: 11px;
+    color: #777;
+    margin-left: 5px;
+}
+
+.contactName{
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 14px;
+    display: block;
+}
+
+.contactInfo{
+    flex: 2 2 auto;
+    width: 0;
+}
+
+.trunc{
+    font-size: 13px;
+    color: #666;
+    line-height: 120%;
+}
