@@ -1,0 +1,35 @@
+.textarea{
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    resize: none;
+    transition: .2s ease-out;
+    border: 1px solid #eee;
+    color: #666;
+    font-size: 14px;
+    height: auto;
+}
+
+
+.textarea:focus{
+    /* border: 1px solid rgb(85, 15, 255); */
+    outline: none;
+}
+
+.composeFooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 16px;
+    padding: 0 6px;
+}
+
+.send{
+    color: rgb(85, 15, 255);
+    font-weight: bold;
+    cursor: pointer;
+}

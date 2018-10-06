@@ -1,0 +1,180 @@
+.wrapper{
+    height: calc(100vh - 70px);
+    width: 100%;
+    background-color: #fbfbfb;
+    padding: 30px 60px 60px 60px;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    border: 1px solid #eaeaea;
+    height: 85vh;
+    border-radius: 3px;
+
+}
+
+.conversations{
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-right: 1px solid #eaeaea;
+}
+
+.convoTop{
+    border-bottom: 1px solid #eaeaea;
+    height: 70px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    color: #777;
+    font-size: 14px;
+}
+
+.convoDropdown{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.convoBottom{
+    display: flex;
+    flex-direction: column;
+}
+
+.msgTop{
+    border-bottom: 1px solid #eaeaea;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.msgBottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    flex: 1;
+}
+
+.msgBottomWrapper{
+    display: flex;
+    height: 100%;
+    flex: 1;
+}
+
+.msgBottomRight{
+    border-left: 1px solid rgb(236, 236, 236);
+    width: 300px;
+    padding: 20px;
+}
+
+.convoName{
+    font-weight: 900;
+}
+.lastOnline{
+    font-size: 12px;
+    color: #777;
+}
+
+.convoBottom{
+}
+
+.messages{
+    height: 100%;
+    background-color: #fff;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer{
+    padding: 20px 20px 10px 20px;
+}
+
+
+/* contact stuff */
+
+.contact{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 15px;
+    border-bottom: 1px solid #eaeaea;
+    cursor: pointer;
+    align-items: center;
+}
+
+.contact:hover{
+    background-color: #eaeaea;
+}
+
+.profile{
+    background-color: #eaeaea;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin: 8px 20px 0 0;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.date{
+    font-size: 11px;
+    color: #777;
+}
+
+.contactName{
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 14px;
+    display: block;
+}
+
+.contactInfo{
+    flex: 2 2 auto;
+}
+
+.trunc{
+    font-size: 13px;
+    color: #666;
+}
+
+
+
+
+
+/* ABOUT SECTION */
+
+.list{
+    list-style: none;
+    margin-top: 30px;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.profileAbout{
+    height: 50px;
+    width: 50px;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}

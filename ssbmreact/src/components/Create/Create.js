@@ -13,7 +13,9 @@ class create extends Component {
         character: '',
         rank: '',
         pricing: '',
-        charArr : []
+        charArr : [],
+        charInputActive: false,
+        onBlur: false
 
     }
 
@@ -33,10 +35,12 @@ class create extends Component {
 
     charChangeHandler = (e) => {
         let word = e.target.value;
-
         if(word[word.length -1] == ','){
-            let myString = word.split(",").join("")
-            
+            let myString = word.split(",").join("");
+            let testString = myString.split(' ').join('');
+            if(myString == ' ' || testString == ''){
+                return;
+            }
             this.setState(prevState => {
                 let arr = [...prevState.charArr];
                 arr.push(myString);
@@ -50,6 +54,32 @@ class create extends Component {
                 character: word
             })
         }
+    }
+
+    charEditorHandler = () => {
+        this.setState(prevState => {
+            return {
+                charInputActive: true
+            }
+        });
+        document.getElementById("charInput").focus();
+    }
+
+    onBlur = () => {
+        this.setState(prevState => {
+            let bool = !prevState.onBlur;
+            if(!bool){
+                return {
+                    onBlur: bool,
+                    charInputActive: false
+                }
+            }else{
+                return {
+                    onBlur: bool
+                }
+            }
+
+        });   
     }
 
     render(){
@@ -113,9 +143,9 @@ class create extends Component {
                         <span className={styles.span}>Characters</span>
                         <span className={styles.hint}>Enter comma to separate characters.</span>
                     </div>
-                    <div className={styles.charEditor}>
+                    <div className={[styles.charEditor, this.state.charInputActive ? styles.charEditorActive : null].join(' ')} onClick={this.charEditorHandler}>
                     {chars}
-                    <input  className={styles.charInput} value={this.state.character} onChange={this.charChangeHandler}/>
+                    <input id="charInput" onBlur={this.onBlur}  className={styles.charInput} value={this.state.character} onChange={this.charChangeHandler}/>
                     </div>
 
                 </div>

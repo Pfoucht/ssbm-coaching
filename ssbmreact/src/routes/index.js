@@ -10,6 +10,7 @@ import Browse from  '../components/Browse/Browse';
 import Profile from '../components/Profile/Profile';
 import Create from '../containers/CreateContainer';
 import GigDetailContainer from '../containers/GigDetailContainer';
+import InboxContainer from '../containers/InboxContainer';
 
   export default () => (
         <Switch>
@@ -18,6 +19,7 @@ import GigDetailContainer from '../containers/GigDetailContainer';
             <Route path="/profile" component={Profile} />
             <Route path="/create" component={Create} />
             <Route path="/detail" component={GigDetailContainer} />
+            <Route path="/inbox" component={InboxContainer} />
         </Switch>
   )
 
