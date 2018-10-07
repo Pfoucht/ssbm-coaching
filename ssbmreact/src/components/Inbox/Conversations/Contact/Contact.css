@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 20px 15px;
+    padding: 15px 15px;
     border-bottom: 1px solid #eaeaea;
     cursor: pointer;
     align-items: center;
@@ -13,8 +13,16 @@
     background-color: #eee;
 }
 
+.active .profile{
+    background-color: #fff;
+}
+
 .contact:hover{
     background-color: #eaeaea;
+}
+
+.contact:hover .profile{
+    background-color: #fff;
 }
 
 .profile{

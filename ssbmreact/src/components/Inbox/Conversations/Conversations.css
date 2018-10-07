@@ -1,0 +1,31 @@
+
+.conversations{
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-right: 1px solid #eaeaea;
+}
+
+.convoTop{
+    border-bottom: 1px solid #eaeaea;
+    height: 70px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    color: #777;
+    font-size: 14px;
+    justify-content: space-between;
+}
+
+.convoDropdown{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.convoBottom{
+    display: flex;
+    flex-direction: column;
+}

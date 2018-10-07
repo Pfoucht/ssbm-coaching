@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Contact.css';
 
 const contact = props => (
-    <div className={[styles.contact, props.active ? styles.active : null].join(' ')}>
+    <div className={[styles.contact, props.active ? styles.active : null].join(' ')} onClick={props.select}>
         <span>
             <span className={styles.profile}>{props.username}</span>
         </span>

@@ -34,7 +34,9 @@ class InboxContainer extends Component {
                 date: 'Oct 05, 5:30',
                 content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
             },                      
-        ]
+        ],
+        convoShown: false,
+        convoIndex: null
     }
 
 
@@ -48,9 +50,18 @@ class InboxContainer extends Component {
         })
     }
 
+    chooseConvoHandler = (num) => {
+       this.setState({
+           convoShown: true,
+           convoIndex: num
+       })
+    }
+
+    chooseConv
+
     render(){
         return (
-            <Inbox sendMessage={this.sendMessageHandler} messages={this.state.messages}/>
+            <Inbox convoShown={this.state.convoShown} chooseConvo={this.chooseConvoHandler} convoIndex={this.state.convoIndex} sendMessage={this.sendMessageHandler} messages={this.state.convoShown ? this.state.messages : []}/>
         );
     }
 }
