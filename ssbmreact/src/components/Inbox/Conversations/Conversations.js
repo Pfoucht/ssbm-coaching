@@ -8,20 +8,7 @@ const conversations = props => {
     return (
         <div className={styles.conversations}>
             <div className={styles.convoTop}>
-                <span className={styles.convoDropdown}>All Conversations
-                    <IconContext.Provider value={{color: '#777', size: '.75rem'}}>
-                    <div>
-                        <FaCaretDown/>
-                    </div>
-                    </IconContext.Provider>   
-            </span>
-            <span>
-                <IconContext.Provider value={{color: '#999', size: '1rem'}}>
-                <div>
-                    <FaSearch/>
-                </div>
-                </IconContext.Provider>              
-            </span>
+                <input className={styles.input} placeholder="Search conversations"/>
             </div>
             <div className={styles.convoBottom}>
                 <Contact select={() => props.selectConvoHandler(0)} active={props.convoIndex == 0} username="BG" name="Bill Gates" date="Aug 31" trunc="Cam, I am considering building..."/>
@@ -30,5 +17,20 @@ const conversations = props => {
     </div>
     );
 }
+
+// <span className={styles.convoDropdown}>All Conversations
+// <IconContext.Provider value={{color: '#777', size: '.75rem'}}>
+// <div>
+//     <FaCaretDown/>
+// </div>
+// </IconContext.Provider>   
+// </span>
+// <span>
+// <IconContext.Provider value={{color: '#999', size: '1rem'}}>
+// <div>
+// <FaSearch/>
+// </div>
+// </IconContext.Provider>              
+// </span>
 
 export default conversations;

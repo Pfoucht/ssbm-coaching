@@ -2,14 +2,17 @@
 .conversations{
     height: 100%;
     background-color: #fff;
+    background-color: #efefef;
     display: flex;
     flex-direction: column;
     width: 300px;
     border-right: 1px solid #eaeaea;
+    border-right: 1px solid #cecece;
 }
 
 .convoTop{
     border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #cecece;
     height: 70px;
     padding: 0 10px;
     display: flex;
@@ -28,4 +31,14 @@
 .convoBottom{
     display: flex;
     flex-direction: column;
+}
+
+.input{
+    border-radius: 3px;
+    background-color: #eee;
+    padding: 8px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background-color: #fff;
 }

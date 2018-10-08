@@ -19,10 +19,15 @@
 
 .contact:hover{
     background-color: #eaeaea;
+    background-color: rgb(85, 15, 255);
+    color: #fff;
 }
 
 .contact:hover .profile{
     background-color: #fff;
+}
+.contact:hover .trunc{
+    color: #fff;
 }
 
 .profile{
