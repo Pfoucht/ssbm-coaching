@@ -13,8 +13,23 @@
     background-color: #eee;
 }
 
+.active{
+    background-color: #eaeaea;
+    background-color: rgb(85, 15, 255);
+    color: #fff;
+}
+
 .active .profile{
     background-color: #fff;
+    color: #111;
+}
+
+.active .trunc{
+    color: #fff;
+}
+
+.active .date{
+    color: #fff;
 }
 
 .contact:hover{
@@ -25,6 +40,7 @@
 
 .contact:hover .profile{
     background-color: #fff;
+    color: #111;
 }
 .contact:hover .trunc{
     color: #fff;

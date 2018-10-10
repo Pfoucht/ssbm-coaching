@@ -30,6 +30,7 @@ const Navigation = (props) => {
             <li className={[styles.item, styles.profile].join(' ')}>
                 <img src={pic} className={styles.pic} />
                 <div className={styles.hoverBox}>
+                    <div className={styles.triangle}></div>
                     <ul className={styles.hoverList}>
                         <li className={styles.hoverItem}>
                             <Link to="/profile" className={styles.hoverLink}>My Profile</Link>

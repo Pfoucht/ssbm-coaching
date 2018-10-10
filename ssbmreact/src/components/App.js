@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import NavContainer from '../containers/NavContainer.js';
 import AuthContainer from '../containers/AuthContainer';
+import Footer from '../components/Footer/Footer';
 import './App.css';
 
 const App = (props) => (
@@ -11,6 +12,7 @@ const App = (props) => (
     <NavContainer/>
     <AuthContainer/>
     <Routes />
+    <Footer/>
   </div>
 )
 
