@@ -1,9 +1,10 @@
-import { FETCH_GIGS_LOADING, FETCH_GIGS_SUCCESS, FETCH_GIGS_FAIL } from "../actions/actionTypes";
+import { FETCH_GIGS_LOADING, FETCH_GIGS_SUCCESS, FETCH_GIGS_FAIL, FETCH_SINGLE_GIG_SUCCESS } from "../actions/actionTypes";
 
 const initialState = {
     posts: null,
     loading: false,
-    error: null
+    error: null,
+    detailPost: null
 }
 
 const browseReducer = (state = initialState, action) => {
@@ -12,6 +13,12 @@ const browseReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: true
+            }
+        case FETCH_SINGLE_GIG_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                detailPost: action.post
             }
         case FETCH_GIGS_SUCCESS:
             return {

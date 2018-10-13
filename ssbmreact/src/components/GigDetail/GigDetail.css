@@ -160,3 +160,37 @@
         cursor: pointer;
         border-radius: 3px;
 }
+
+
+
+
+
+
+/* USER CONTENT */
+
+
+.content p{
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.content ul{
+    list-style: honeydew !important;
+    margin-left: 30px;
+    list-style-type: disc;
+
+}
+
+.content li{
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.content p:last-child{
+    margin-bottom: 40px;
+}

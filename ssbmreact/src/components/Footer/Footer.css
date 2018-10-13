@@ -61,14 +61,16 @@
 
 /* POSSIBLE STYLES */
 
-.footer{
+/* .footer{
     background-color: #efefef;
-}
+} */
 
 .title{
     color: #4e4e4e;
+    color: #fafafa;
 }
 
 .link{
     color: #6b6b6b;
+    color: #aaa;
 }

@@ -1,4 +1,4 @@
-import { CREATE_GIGS_LOADING, CREATE_GIGS_SUCCESS, CREATE_GIGS_FAIL } from "../actions/actionTypes";
+import { CREATE_GIG_LOADING, CREATE_GIG_SUCCESS, CREATE_GIG_FAIL } from "../actions/actionTypes";
 
 const initialState = {
     posts: null,
@@ -8,18 +8,18 @@ const initialState = {
 
 const createReducer = (state = initialState, action) => {
     switch(action.type){
-        case CREATE_GIGS_LOADING:
+        case CREATE_GIG_LOADING:
             return {
                 ...state,
                 loading: true
             }
-        case CREATE_GIGS_SUCCESS:
+        case CREATE_GIG_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 posts: action.posts
             }
-        case CREATE_GIGS_FAIL:
+        case CREATE_GIG_FAIL:
             return {
                 ...state,
                 loading: false,

@@ -1,0 +1,64 @@
+.card{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+    width: 240px;
+    min-height: 230px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: .3s;
+    text-decoration: none;
+    color: inherit;
+    width: 220px;
+    border: 1px solid #cfcfcf;
+    color: #333;
+
+}
+
+.cardImg{
+    height: 110px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card:hover{
+box-shadow: rgba(0, 0, 0, 0.2) 2px 3px 6px 0px;
+
+}
+
+.title{
+    margin-bottom: 10px;
+    font-weight: 400;
+    color: #333;
+    font-weight: bold;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.name, .game, .chars{
+    display: block;
+    padding: 4px;
+    font-size: 14px;
+    color: #555;
+}
+
+.name{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.cardContent{
+    padding: 10px 10px;
+}
+
+.cardFooter{
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 15px 5px 15px;
+    border-top: 1px solid #efefef;
+    align-items: center;
+}
+.free{
+    font-size: 12px;
+    color: #777;
+}

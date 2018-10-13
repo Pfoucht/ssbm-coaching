@@ -6,6 +6,7 @@ import Nav from './Nav/Nav';
 import StepOne from './StepOne/StepOne';
 import StepTwo from './StepTwo/StepTwo';
 import Publish from './Publish/Publish';
+import StepThree from './StepThree/StepThree';
 
 class create extends Component {
     render() {
@@ -14,8 +15,11 @@ class create extends Component {
             editor = <StepOne nextStep={this.props.nextStep}/>
         } else if(this.props.step == 2){
             editor = <StepTwo finishStepTwo={this.props.finishStepTwo}/>
-        }else{
-            editor = <Publish/>
+        }else if(this.props.step == 3){
+            editor = <StepThree finishStepThree={this.props.finishStepThree}  />
+        }
+        else{
+            editor = <Publish publishGig={this.props.publishGig}/>
         }
 
         return (

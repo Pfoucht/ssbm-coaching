@@ -2,15 +2,21 @@ import axios from 'axios';
 import { CREATE_GIG_LOADING, CREATE_GIG_SUCCESS, CREATE_GIG_FAIL } from './actionTypes';
 
 
-export const createGig = (game, characters, pricing) => {
+export const createGig = (title, game, rank, pricing, characters, desc, coverPhoto) => {
+    console.log(desc);
     return dispatch => {
         dispatch(createGigLoading());
         let obj = {
+            title: title,
             game: game,
+            rank: rank,
             characters: characters,
-            pricing: pricing
+            pricing: pricing,
+            description: desc,
+            coverPhoto: coverPhoto
         }
-        axios.post('OURURLHERE', obj)
+        console.log(obj);
+        axios.post('http://localhost:8080/api/create', obj)
         .then(res => {
             return;
         })

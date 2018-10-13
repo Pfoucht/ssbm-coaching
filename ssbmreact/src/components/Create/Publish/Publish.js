@@ -8,7 +8,7 @@ const publish = props => {
             <div className={styles.content}>
                 CONTENT ABOUT PUBLISHING!
             </div>
-            <button className={styles.btn} onClick={this.continueHandler}>Publish</button>
+            <button className={styles.btn} onClick={props.publishGig}>Publish</button>
 
         </div>
   )

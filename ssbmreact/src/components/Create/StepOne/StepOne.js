@@ -7,6 +7,7 @@ class stepOne extends Component {
 
     state = {
         dropdownOpen: false,
+        title: '',
         gameValue: 'Choose your game',
         character: '',
         rank: '',
@@ -19,6 +20,7 @@ class stepOne extends Component {
 
     nextStepHandler = () => {
         this.props.nextStep(
+            this.state.title,
             this.state.gameValue,
             this.state.rank,
             this.state.pricing,
@@ -119,6 +121,8 @@ class stepOne extends Component {
                     <div className={styles.flex}>
                         <div className={styles.span}>GIG Title</div>
                         <textarea
+                            value={this.state.title}
+                            onChange={(e) => this.setState({title: e.target.value})}
                             className={styles.textarea}
                             placeholder="Professional doubles fox tech coaching"/>
                     </div>
