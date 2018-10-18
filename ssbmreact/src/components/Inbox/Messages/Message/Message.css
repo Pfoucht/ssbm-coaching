@@ -9,10 +9,10 @@
 .message:not(:last-child){
     border-bottom: 1px solid #efefef;
 }
-
+/* 
 .message:hover{
     background-color: #efefef;
-}
+} */
 
 .profile{
     background-color: #eee;

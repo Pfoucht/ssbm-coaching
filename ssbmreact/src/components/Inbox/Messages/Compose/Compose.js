@@ -24,24 +24,26 @@ class Compose extends Component {
 
     render(){
         return (
-            <div>
-                <textarea className={styles.textarea} value={this.state.content} onChange={(e) => this.setState({content: e.target.value})}/>
-                <div className={styles.composeFooter}>
-                    <div>
-                        <IconContext.Provider value={{color: '#999', size: '1rem'}}>
-                        <div>
-                            <FaPaperclip/>
-                        </div>
-                        </IconContext.Provider>   
-                    </div>
-
-                    <div>
-                        <span onClick={this.sendMessage} className={styles.send}>Send</span>
-                    </div>
-                </div>
+            <div className={styles.container}>
+                <textarea  className={styles.textarea2}/>
             </div>
         )
     }
 }
+
+// <textarea className={styles.textarea} value={this.state.content} onChange={(e) => this.setState({content: e.target.value})}/>
+// <div className={styles.composeFooter}>
+//     <div>
+//         <IconContext.Provider value={{color: '#999', size: '1rem'}}>
+//         <div>
+//             <FaPaperclip/>
+//         </div>
+//         </IconContext.Provider>   
+//     </div>
+
+//     <div>
+//         <span onClick={this.sendMessage} className={styles.send}>Send</span>
+//     </div>
+// </div>
 
 export default Compose;

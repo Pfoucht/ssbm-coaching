@@ -3,6 +3,7 @@ import styles from './GigDetail.css';
 import Reviews from '../Profile/Reviews/Reviews';
 import { FaBackward } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
+import OtherCoaches from '../Browse/OtherCoaches/OtherCoaches';
 const pic = require('../../assets/dakota.jpg');
 
 
@@ -78,6 +79,10 @@ const GigDetail = props => {
                 </div>
             </div>
 
+            </div>
+
+            <div>
+                <OtherCoaches/>
             </div>
         </section>
     )

@@ -1,13 +1,15 @@
 .profileContainer{
     background-color: #eee;
+    background: #fbfbfb;
     max-width: 1080px;
     margin: 0 auto;
 }
 
 .wrapper{
     background-color: #eee;
-    height: 100vh;
+    min-height: 100vh;
     padding: 45px 0;
+    background: #fbfbfb;
 }
 
 .header{
@@ -17,7 +19,9 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    border: 1px solid #ccc;
+    border: 1px solid #eee;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+
     /* box-shadow: 2px 4px 8px #ccc; */
 }
 
@@ -133,13 +137,13 @@
     width: 70.666666%
 }
 
-.box{
+/* .box{
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ccc;
     margin-bottom: 15px;
     position: relative;
-}
+} */
 
 .item2{
     display: flex;
@@ -251,4 +255,26 @@
     font-size: 18px;
     border-radius: 3px;
     border-top-left-radius: 0;
+}
+
+
+.box{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+}
+
+.boxTitle{
+    margin: -20px -30px 15px -30px;
+    background-color: #eee;
+    padding: 15px;
+
+}
+
+.content p{
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 5px;
 }

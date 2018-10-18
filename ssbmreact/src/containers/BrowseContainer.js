@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchGigs } from '../store/actions/browse';
 
 class BrowseContainer extends Component{
+    
 
     componentDidMount(){
         this.props.onFetchPosts();

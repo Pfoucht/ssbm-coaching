@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Nav.css';
-import {FaCaretDown, FaCaretRight, FaMapMarker} from 'react-icons/fa'
+import {FaCaretDown, FaCaretRight, FaMapMarker, FaMapMarkerAlt} from 'react-icons/fa'
+
 import {IconContext} from 'react-icons';
 
 const nav = props => (
@@ -13,7 +14,7 @@ const nav = props => (
                         color: '#fff',
                         size: '14px'
                     }}>
-                        <FaMapMarker/>
+                        <FaMapMarkerAlt/>
                     </IconContext.Provider>
                 </span>
                 <span>Overview</span>
@@ -41,7 +42,20 @@ const nav = props => (
                 </span>
             </li>
             <li className={styles.navItem}>
-                <span className={styles.navNum}>3</span>
+            <span className={styles.navNum}>3</span>
+            <span>Cover Photo</span>
+            <span className={styles.navCaret}>
+            <IconContext.Provider
+                value={{
+                color: '#777',
+                size: '14px'
+            }}>
+                <FaCaretRight/>
+            </IconContext.Provider>
+        </span>
+        </li>
+            <li className={styles.navItem}>
+                <span className={styles.navNum}>4</span>
                 <span>Publish</span>
             </li>
 

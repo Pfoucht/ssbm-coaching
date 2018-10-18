@@ -5,6 +5,7 @@
     align-items: flex-start;
     padding: 15px 15px;
     border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #cfcfcf;
     cursor: pointer;
     align-items: center;
 }
@@ -16,6 +17,7 @@
 .active{
     background-color: #eaeaea;
     background-color: rgb(85, 15, 255);
+    background-color: #FF9800;
     color: #fff;
 }
 
@@ -33,18 +35,19 @@
 }
 
 .contact:hover{
-    background-color: #eaeaea;
+    /* background-color: #eaeaea;
     background-color: rgb(85, 15, 255);
-    color: #fff;
+    background: #FF9800; */
+    /* color: #fff; */
 }
 
-.contact:hover .profile{
+/* .contact:hover .profile{
     background-color: #fff;
     color: #111;
 }
 .contact:hover .trunc{
     color: #fff;
-}
+} */
 
 .profile{
     background-color: #eaeaea;
