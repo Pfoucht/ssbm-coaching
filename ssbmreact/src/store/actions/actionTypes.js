@@ -6,7 +6,9 @@ export const AUTH_LOADING = 'AUTH_LOADING';
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_FAIL = 'AUTH_FAIL';
 
+export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 
+export const CHANGE_AUTH_MODE = 'CHANGE_AUTH_MODE';
 
 export const CREATE_GIG_LOADING = 'CREATE_GIG_LOADING';
 export const CREATE_GIG_SUCCESS = 'CREATE_GIG_SUCCESS';

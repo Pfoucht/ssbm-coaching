@@ -1,11 +1,12 @@
-import { AUTH_LOADING, AUTH_SUCCESS, AUTH_FAIL, AUTH_SLIDE } from '../actions/actionTypes';
+import { AUTH_LOADING, AUTH_SUCCESS, AUTH_FAIL, AUTH_SLIDE, AUTH_LOGOUT, CHANGE_AUTH_MODE } from '../actions/actionTypes';
 
 const initialState = {
     username: null,
     token: null,
     loading: false,
     error: null,
-    sliderOpen: false
+    sliderOpen: false,
+    authMode: 'login'
 };
 
 const authReducer = (state = initialState, action) => {
@@ -20,7 +21,8 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 username: action.username,
-                token: action.token
+                token: action.token,
+                sliderOpen: false
             }
         case AUTH_FAIL:
             return {
@@ -29,9 +31,26 @@ const authReducer = (state = initialState, action) => {
                 loading: false
             }
         case AUTH_SLIDE:
+            let mode = action.mode;
+            if(!action.mode){
+                mode = state.authMode;
+            }
             return {
                 ...state,
-                sliderOpen: !state.sliderOpen
+                sliderOpen: !state.sliderOpen,
+                authMode: mode
+            }
+        case AUTH_LOGOUT:
+            return {
+                ...state,
+                username: null,
+                token: null
+            }
+        case CHANGE_AUTH_MODE:
+            console.log(action.mode);
+            return {
+                ...state,
+                authMode: action.mode
             }
         default: return state;
     }

@@ -5,6 +5,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const createRoutes = require('./routes/create');
 const browseRoutes = require('./routes/browse');
+const authRoutes = require('./routes/auth');
+
+
+require('./models/user');
+require('./config/passport');
 
 mongoose.connect('mongodb://ssbmadmin:ssbmcoaching123@ds227373.mlab.com:27373/ssbmcoaching');
 
@@ -23,6 +28,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/api/create', createRoutes)
 app.use('/api/browse', browseRoutes)
+app.use('/api/auth', authRoutes)
 
 app.listen(8080, () => {
     console.log('Listening on port 8080')

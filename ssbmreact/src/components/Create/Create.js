@@ -24,7 +24,7 @@ class create extends Component {
 
         return (
             <div className={styles.wrapper}>
-                <Nav/>
+                <Nav step={this.props.step}/>
                 {editor}
             </div>
         )

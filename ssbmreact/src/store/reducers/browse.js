@@ -15,6 +15,7 @@ const browseReducer = (state = initialState, action) => {
                 loading: true
             }
         case FETCH_SINGLE_GIG_SUCCESS:
+            console.log(state.posts);
             return {
                 ...state,
                 loading: false,

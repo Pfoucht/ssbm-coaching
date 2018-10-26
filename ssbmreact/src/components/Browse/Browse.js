@@ -19,9 +19,6 @@ class Browse extends Component {
         }
         return (
             <div>
-                <header className={styles.header}>
-                    <h1 className={styles.h1}>Melee Coaches</h1>
-                </header>
                 <section className={styles.browseContainer}> 
                     <div className={styles.container}>
                         <h4 className={styles.flexHeader}>

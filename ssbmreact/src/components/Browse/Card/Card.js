@@ -8,9 +8,26 @@ const card = (props) => (
         <div className={styles.cardContent}>
             <h5 className={styles.title}>{props.el.title}</h5>
             <span className={styles.game}>{props.el.game}</span>
-            <span className={styles.chars}>Characters: {props.el.characters.join(', ')}</span>
+            <div className={styles.cardFooter}>
+            <div>
+            <span className={styles.spanBig}>6</span>
+            <span className={styles.spanSmall}>Chars</span>
+        </div>      
+                <div>
+                    <span className={styles.spanBig}>10</span>
+                    <span className={styles.spanSmall}>Reviews</span>
+                </div>
+
+                <div>
+                    <span className={styles.spanBig}>10$</span>
+                    <span className={styles.spanSmall}>COST/HOUR</span>
+                </div>                          
+            </div>
          </div>
     </Link>
 );
+
+
+// <span className={styles.chars}>Characters: {props.el.characters.join(', ')}</span>
 
 export default card;

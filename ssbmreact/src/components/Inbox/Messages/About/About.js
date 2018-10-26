@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './About.css';
 
 const about = props => (
-    <div>
+    <div className={styles.container}>
         <strong>About</strong>
         <span className={styles.profileAbout} style={{margin: '20px auto'}}>YT</span>
         <span>YamiTamashi</span>

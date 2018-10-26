@@ -103,3 +103,18 @@
 .loading{
     background-color: #eee;
 }
+
+
+.switchLink{
+    font-size: 14px;
+    color: rgb(85, 15, 255);
+    cursor: pointer;
+    font-weight: bold;
+}
+.switchLink:hover{
+    text-decoration: underline;
+}
+
+.switchSpan{
+    font-size: 14px;
+}

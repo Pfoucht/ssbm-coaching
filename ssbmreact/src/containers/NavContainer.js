@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleAuthSlider } from '../store/actions/index';
 import Nav from '../components/Nav/Nav'
+import { authLogout } from '../store/actions/auth';
 
 class NavContainer extends Component {
     constructor(props) {
@@ -12,15 +13,24 @@ class NavContainer extends Component {
         return (
             <div>
                 <Nav 
-                navClick={this.props.onAuthSlide}/>
+                navClick={this.props.onAuthSlide} 
+                isAuthenticated={this.props.isAuthenticated}
+                logout={this.props.onLogout}
+                />
             </div>
         )
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        isAuthenticated: state.auth.token !== null
+    }
+}
 
 const mapDispatchToProps = dispatch => ({
-    onAuthSlide: () => dispatch(toggleAuthSlider())
+    onAuthSlide: (mode) => dispatch(toggleAuthSlider(mode)),
+    onLogout: () => dispatch(authLogout())
 });
 
-export default connect(null, mapDispatchToProps)(NavContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(NavContainer);

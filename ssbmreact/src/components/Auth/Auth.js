@@ -8,7 +8,7 @@ class Auth extends Component {
     state = {
         username: "",
         email: "",
-        password: ""
+        password: "",
         
     }
 
@@ -17,8 +17,21 @@ class Auth extends Component {
         this.props.authenticate(
                         this.state.username,
                         this.state.email,
-                        this.state.password
+                        this.state.password,
+                        this.props.authMode
                         );
+    }
+
+
+    switchAuthMode = () => {
+        let authMode = this.props.authMode;
+        if(authMode === 'login'){
+            authMode = 'register';
+        }else {
+            authMode = 'login';
+        }
+        console.log(this.props);
+        this.props.switchAuthMode(authMode);
     }
 
     render(){
@@ -31,16 +44,25 @@ class Auth extends Component {
             modalClasses = [styles.authContainer, styles.slidedRight]
         }
 
+        let choice = (
+            <span className={styles.switchSpan}>Dont have an account? <span onClick={() => this.props.switchAuthMode('register')} className={styles.switchLink}>Register now!</span></span>
+        )
+
+        if(this.props.authMode === 'register'){
+            choice =  <span className={styles.switchSpan}>Already have an account? <span onClick={() => this.props.switchAuthMode('login')} className={styles.switchLink}>Login now!</span></span>
+
+        }
+
         return (
             <div className={modalClasses.join(' ')}>
                 <span className={styles.close} onClick={this.props.toggle}>x</span>
-                <HeadingThick>Sign up</HeadingThick>
-                <span>Already have an account?</span>
+                <HeadingThick>  {this.props.authMode === 'login' ? 'Log in' : 'Sign up' }</HeadingThick>
+                {choice}
                 <form onSubmit={this.submitHandler}>
                     <input className={styles.authInput} placeholder="Username" type="text" value={this.state.username} onChange={(e) => this.setState({username: e.target.value})}/>
-                    <input className={styles.authInput} placeholder="Email" type="text" value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/>
+                    {this.props.authMode === 'login' ? null: <input className={styles.authInput} placeholder="Email" type="text" value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/>}
                     <input className={styles.authInput} placeholder="Password" type="password" value={this.state.password} onChange={(e) => this.setState({password: e.target.value})}/>
-                    <button className={styles.authBtn} type="submit">Sign up</button>
+                    <button className={styles.authBtn} type="submit">{this.props.authMode === 'login' ? "Login" : "Sign up"}</button>
                 </form>
 
                 <div className={styles.orContainer}>

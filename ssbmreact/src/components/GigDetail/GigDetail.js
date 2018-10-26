@@ -68,7 +68,14 @@ const GigDetail = props => {
                     <p className={styles.p}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                 </div>
 
-                <Reviews/>
+               
+                <div className className={styles.box}>
+                <div className={styles.boxTitle}>Yamis Reviews</div>
+                    <img className={styles.noReviewImg} src="https://66.media.tumblr.com/4dde219bfe01fb275dca27404d98ce43/tumblr_inline_pfea89kT9y1v1ndyl_540.gif"/>
+                    <h2 className={styles.noReviewTitle}>Yami doesnt have any reviews yet</h2>
+                    <button className={styles.btn}>Be the first to Review</button>
+                    </div>
+
                 </div>
                 <div className={styles.gigRight}>
                 <h4 className={styles.h4}>To discuss your coaching with Yami, message him.</h4>
@@ -82,7 +89,7 @@ const GigDetail = props => {
             </div>
 
             <div>
-                <OtherCoaches/>
+                <OtherCoaches coaches={props.otherPosts}/>
             </div>
         </section>
     )

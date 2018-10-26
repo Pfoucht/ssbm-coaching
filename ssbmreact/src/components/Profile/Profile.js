@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import styles from './Profile.css';
 import Reviews from './Reviews/Reviews';
-import {FiClock} from 'react-icons/fi';
+import {FiClock, FiMapPin, FiTarget, FiUser} from 'react-icons/fi';
+import { IoIosClock } from 'react-icons/io';
+import { IconContext } from 'react-icons';
 const pic = require('../../assets/selfie.JPG');
+
 
 class Profile extends Component {
 
@@ -135,27 +138,39 @@ class Profile extends Component {
                                 <ul className={styles.list}>
                                     <li className={styles.item}>
                                         <div className={styles.itemLeft}>
-                                            <img
-                                                src="https://vignette.wikia.nocookie.net/mario/images/b/b8/Bob-omb_Buddy%2C_Super_Mario_Galaxy_2.png/revision/latest?cb=20121106193912"
-                                                className={styles.listIcon}/>
+                                            <span className={styles.itemIcon}>
+                                                <IconContext.Provider value={{color: '#222', size: '1.25rem'}}>
+                                                <div>
+                                                    <FiClock/>
+                                                </div>
+                                                </IconContext.Provider> 
+                                            </span>
                                             Availability:
                                         </div>
                                         <strong>Full Time</strong>
                                     </li>
                                     <li className={styles.item}>
                                         <div className={styles.itemLeft}>
-                                            <img
-                                                src="https://vignette.wikia.nocookie.net/diepio/images/8/8e/Shine_melee.png/revision/latest?cb=20160727205952"
-                                                className={styles.listIcon}/>
+                                        <span className={styles.itemIcon}>
+                                        <IconContext.Provider value={{color: '#222', size: '1.25rem'}}>
+                                        <div>
+                                            <FiMapPin/>
+                                        </div>
+                                        </IconContext.Provider> 
+                                    </span>
                                             Location:
                                         </div>
                                         <strong>Bellevue Wa</strong>
                                     </li>
                                     <li className={styles.item}>
                                         <div className={styles.itemLeft}>
-                                            <img
-                                                src="https://www.smashladder.com/images/smash/tiers/grandsmasher.png"
-                                                className={styles.listIcon}/>
+                                            <span className={styles.itemIcon}>
+                                            <IconContext.Provider value={{color: '#222', size: '1.25rem'}}>
+                                            <div>
+                                                <FiTarget/>
+                                            </div>
+                                            </IconContext.Provider> 
+                                        </span>
                                             Smash Rank:
                                         </div>
                                         <strong>Grandmaster</strong>
@@ -163,9 +178,13 @@ class Profile extends Component {
 
                                     <li className={styles.item}>
                                         <div className={styles.itemLeft}>
-                                            <img
-                                                src="https://www.models-resource.com/resources/big_icons/6/5380.png"
-                                                className={styles.listIcon}/>
+                                            <span className={styles.itemIcon}>
+                                            <IconContext.Provider value={{color: '#222', size: '1.25rem'}}>
+                                            <div>
+                                                <FiUser/>
+                                            </div>
+                                            </IconContext.Provider> 
+                                        </span>
                                             Main Character:
                                         </div>
                                         <strong>Marth</strong>

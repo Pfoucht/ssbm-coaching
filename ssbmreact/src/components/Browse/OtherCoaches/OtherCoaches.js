@@ -1,20 +1,27 @@
 import React from 'react';
 import styles from './OtherCoaches.css';
+import Card from '../Card/Card';
 
+const otherCoaches = props => {
 
-const otherCoaches = props => (
-    <div className={styles.container}>
+    let coaches = null;
 
-        <h2 className={styles.title}>Recommended Coaches</h2>
-        <div className={styles.flexbox}>
-            <div className={styles.card}>1</div>
-            <div className={styles.card}>2</div>
-            <div className={styles.card}>3</div>
-            <div className={styles.card}>4</div>
-        </div>
-        
+    if(props.coaches && props.coaches.length > 0){
+        coaches = props.coaches.map(el => {
+            return <Card el={el}/>
+        })
+    }
+
+    return (
+
     
-    </div>
-);
+        <div className={styles.container}>
+            <h2 className={styles.title}>Recommended Coaches</h2>
+            <div className={styles.flexbox}>
+                {coaches}
+            </div>
+        </div>
+    );
+};
 
 export default otherCoaches;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Routes from '../routes';
 import { connect } from 'react-redux';
 
@@ -6,15 +6,28 @@ import NavContainer from '../containers/NavContainer.js';
 import AuthContainer from '../containers/AuthContainer';
 import Footer from '../components/Footer/Footer';
 import './App.css';
+import { checkAuthState } from '../store/actions';
+import { withRouter } from 'react-router-dom';
 
-const App = (props) => (
-  <div className="App">
-    <NavContainer/>
-    <AuthContainer/>
-    <Routes />
-    <Footer/>
-  </div>
-)
+
+class App extends Component {
+
+  componentDidMount(){
+    this.props.onCheckAuthState();
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <NavContainer/>
+        <AuthContainer/>
+        <Routes />
+        <Footer/>
+      </div>  
+    )
+  }
+
+}
 
 
 // Reference code
@@ -28,4 +41,11 @@ const App = (props) => (
 
 // export default connect(mapStateToProps, mapDispatchToProps)(App);
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    onCheckAuthState: () => dispatch(checkAuthState())
+  }
+}
+
+
+export default withRouter(connect(null, mapDispatchToProps)(App));

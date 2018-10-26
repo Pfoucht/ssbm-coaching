@@ -155,10 +155,11 @@
         color: #fff;
         background-color: rgb(15, 0, 224);
         background-color: rgb(85, 15, 255);
-        margin: 10px 0;
         font-size: 15px;
         cursor: pointer;
         border-radius: 3px;
+        max-width: 300px;
+        margin: 10px auto;
 }
 
 
@@ -193,4 +194,23 @@
 
 .content p:last-child{
     margin-bottom: 40px;
+}
+
+
+
+/* NO REVIEW CONTENT */
+
+.noReviewImg{
+    display: block;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.noReviewTitle{
+    font-size: 20px;
+    color: #111;
+    font-weight: 800;
+    margin-right: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }

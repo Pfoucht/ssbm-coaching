@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GigDetail from '../components/GigDetail/GigDetail';
-import { fetchSingleGig } from '../store/actions/browse';
+import { fetchSingleGig, fetchGigs } from '../store/actions/browse';
 import { connect } from 'react-redux';
 
 class GigDetailContainer extends Component {
@@ -12,6 +12,7 @@ class GigDetailContainer extends Component {
     componentDidMount(){
         console.log(this.props.match.params.id);
         this.props.onFetchSinglePost(this.props.match.params.id);
+        this.props.onFetchPosts();
     }
 
     goBackHandler = () => {
@@ -20,7 +21,7 @@ class GigDetailContainer extends Component {
 
     render(){
         return (
-            <GigDetail post={this.props.post} goBack={this.goBackHandler}/>
+            <GigDetail post={this.props.post} goBack={this.goBackHandler} otherPosts={this.props.otherPosts}/>
         );
     }
 }
@@ -28,7 +29,8 @@ class GigDetailContainer extends Component {
 const mapStateToProps = state => {
     return state => {
         return {
-            post: state.browse.detailPost
+            post: state.browse.detailPost,
+            otherPosts: state.browse.posts ? state.browse.posts.slice(0, 4) : null
         }
     }
 }
@@ -36,7 +38,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return dispatch => {
         return {
-            onFetchSinglePost: (id) => dispatch(fetchSingleGig(id))
+            onFetchSinglePost: (id) => dispatch(fetchSingleGig(id)),
+            onFetchPosts: () => dispatch(fetchGigs())
         }
     }
 }

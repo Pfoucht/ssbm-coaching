@@ -1,7 +1,7 @@
-import { AUTH_LOADING, AUTH_FAIL, AUTH_SUCCESS, AUTH_SLIDE } from "./actionTypes";
-// import axios from 'axios';
+import { AUTH_LOADING, AUTH_FAIL, AUTH_SUCCESS, AUTH_SLIDE, AUTH_LOGOUT, CHANGE_AUTH_MODE } from "./actionTypes";
+import axios from 'axios';
 
-export const authenticate = (username, email, password) => {
+export const authenticate = (username, email, password, loginMode) => {
     // Example of redux thunk with axios;
     return dispatch => {   
         console.log(username, email, password);
@@ -11,19 +11,32 @@ export const authenticate = (username, email, password) => {
             email, email,
             password: password
         };
-        // axios.post('ourURLgoeshere.com', authInfo)
-        //     .then(res => {
-        //         dispatch(authSuccess(res.data.username, res.data.idToken))
-        //     })
-        //     .catch(error => {
-        //         dispatch(authFail(error.data.error))
-        //     });
+
+        let url = 'http://localhost:8080/api/auth/register';
+
+        if(loginMode){
+            url = 'http://localhost:8080/api/auth/login';
+        }
+
+        axios.post(url, authInfo)
+            .then(res => {
+                console.log(res);
+
+                const { token, username, expiration} = res.data;
+
+                setLocalStorage(token, username, 1, expiration);
+
+                dispatch(authSuccess(username, token));
+            })
+
     };
 }
 
-export const toggleAuthSlider = () => {
+export const toggleAuthSlider = (mode) => {
+
     return {
-        type: AUTH_SLIDE
+        type: AUTH_SLIDE,
+        mode: mode
     }
 }
 
@@ -46,4 +59,53 @@ export const authFail = (error) => {
         type: AUTH_FAIL,
         error: error
     };
+}
+
+export const changeAuthMode = (mode) => {
+    return {
+        type: CHANGE_AUTH_MODE,
+        mode: mode
+    }
+}
+
+
+const setLocalStorage = (token, username, userId, expiration) => {
+    localStorage.setItem('token', token);
+    localStorage.setItem('username', username);
+    localStorage.setItem('userId', userId);
+    localStorage.setItem('expiration', expiration);
+}
+
+export const checkAuthState = () => {
+    return dispatch => {
+        const token = localStorage.getItem('token');
+        const expiration = localStorage.getItem('expiration');
+        const username = localStorage.getItem('username');
+    
+        if(!token){
+            authLogout();
+        }else {
+            const expirationDate = new Date(expiration);
+    
+            if(expirationDate <= new Date()){
+                dispatch(authLogout())
+            }else if(!username){
+                dispatch(authLogout())
+            }else{
+                dispatch(authSuccess(username, token));
+            }
+    }
+
+    }
+}
+
+
+export const authLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('expiration');
+    return {
+        type: AUTH_LOGOUT
+    }
 }

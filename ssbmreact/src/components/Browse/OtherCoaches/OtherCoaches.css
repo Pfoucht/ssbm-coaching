@@ -1,7 +1,7 @@
 .container{
     width: 100%;
     background-color: #eee;
-    padding: 40px 300px 100px 300px;
+    padding: 50px 300px 100px 300px;
     border-top: 1px solid #eee;
 }
 
@@ -16,7 +16,10 @@
 .title{
     font-size: 20px;
     font-weight: 900;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 24px;
+    color: #111;
 }
 
 .card{

@@ -11,7 +11,6 @@ import { Link, withRouter } from 'react-router-dom';
 
 class Nav extends Component {
     state = {
-        isAuthenticated : true,
         search: ''
     }
     constructor(props) {
@@ -20,9 +19,9 @@ class Nav extends Component {
         this.onClick = this.onClick.bind(this);
     }
 
-    onClick(e) {
+    onClick(authMode) {
         console.log("clicked");
-        this.props.navClick();
+        this.props.navClick(authMode);
     }
 
     searchHandler = (e) => {
@@ -50,7 +49,7 @@ class Nav extends Component {
                 <button className={styles.btn} type="submit">Search</button>
                 </form>
                 </div>
-                <Navigation onClick={this.onClick} isAuthenticated={true}/>
+                <Navigation logout={this.props.logout} onClick={this.onClick} isAuthenticated={this.props.isAuthenticated}/>
             </div>
         )
     }
