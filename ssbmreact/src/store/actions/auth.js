@@ -4,6 +4,8 @@ import axios from 'axios';
 export const authenticate = (username, email, password, loginMode) => {
     // Example of redux thunk with axios;
     return dispatch => {   
+
+        console.log(loginMode);
         console.log(username, email, password);
         dispatch(authLoading());
         let authInfo = {
@@ -14,7 +16,7 @@ export const authenticate = (username, email, password, loginMode) => {
 
         let url = 'http://localhost:8080/api/auth/register';
 
-        if(loginMode){
+        if(loginMode === 'login'){
             url = 'http://localhost:8080/api/auth/login';
         }
 

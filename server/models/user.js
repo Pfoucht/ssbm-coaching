@@ -10,7 +10,8 @@ const userSchema = new Schema({
     description: {type: String},
     twitter: {type: String},
     twitch: {type: String},
-    gigs: [],
+    gigs: [{type: mongoose.Schema.Types.ObjectId, ref: 'Gig'}],
+    profilePicture: {type: String}
 });
 
 

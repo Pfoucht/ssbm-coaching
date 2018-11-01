@@ -2,7 +2,7 @@ import axios from 'axios';
 import { CREATE_GIG_LOADING, CREATE_GIG_SUCCESS, CREATE_GIG_FAIL } from './actionTypes';
 
 
-export const createGig = (title, game, rank, pricing, characters, desc, coverPhoto) => {
+export const createGig = (title, game, rank, pricing, characters, desc, coverPhoto, token) => {
     console.log(desc);
     return dispatch => {
         dispatch(createGigLoading());
@@ -16,7 +16,7 @@ export const createGig = (title, game, rank, pricing, characters, desc, coverPho
             coverPhoto: coverPhoto
         }
         console.log(obj);
-        axios.post('http://localhost:8080/api/create', obj)
+        axios.post('http://localhost:8080/api/create?token=' + token, obj)
         .then(res => {
             return;
         })

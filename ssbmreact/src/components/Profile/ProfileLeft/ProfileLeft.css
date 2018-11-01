@@ -1,0 +1,50 @@
+.flexOneThird{
+    width: 25.333333%;
+}
+
+.box{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+}
+
+.boxTitle{
+    margin: -20px -30px 15px -30px;
+    background-color: #eee;
+    padding: 15px;
+}
+
+.content p{
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+
+.item2{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.item2:hover{
+    text-decoration: underline;
+}
+
+.item2 img{
+    margin-right: 6px;
+}
+
+.listIcon{
+    height: 25px;
+    width: 25px;
+    margin-right: 3px;
+}
+
+
+

@@ -52,6 +52,7 @@ class CreateContainer extends Component{
         console.log("HERE I AM WILLYAM");
         console.log(this.state.gigDescription);
         console.log(this.state);
+        console.log(this.props);
         this.props.onCreateGig(
             this.state.title,
             this.state.gigGame,
@@ -59,7 +60,8 @@ class CreateContainer extends Component{
             this.state.pricing,
             this.state.charArr,
             this.state.gigDescription,
-            this.state.coverPhoto
+            this.state.coverPhoto,
+            this.props.token
         );
     }
 
@@ -72,15 +74,17 @@ class CreateContainer extends Component{
 }
 
 const mapStateToProps = state => {
-
+    return {
+        token: state.auth.token
+    }
 }
 
 const mapDispatchToProps = dispatch => {
     return dispatch => {
         return {
-            onCreateGig: (title, game, rank, pricing, characters, desc, coverPhoto) => dispatch(createGig(title, game, rank, pricing, characters, desc, coverPhoto))
+            onCreateGig: (title, game, rank, pricing, characters, desc, coverPhoto, token) => dispatch(createGig(title, game, rank, pricing, characters, desc, coverPhoto, token))
         }
     }
 }
 
-export default  connect(null, mapDispatchToProps)(CreateContainer);
+export default  connect(mapStateToProps, mapDispatchToProps)(CreateContainer);

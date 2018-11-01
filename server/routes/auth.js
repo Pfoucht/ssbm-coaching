@@ -15,7 +15,7 @@ router.post('/register', async (req, res) => {
     try {
         const user = new Users();
         user.username = username;
-        user.email = 'Test@gmail.com';
+        user.email = req.body.email;
         user.setPassword(password);
 
         await user.save();
@@ -48,7 +48,8 @@ router.post('/login', (req, res) => {
 
         const payload = {
             username: user.username,
-            expiresIn: expire
+            expiresIn: expire,
+            userId: user._id
         }
 
         req.login(payload, { session: false }, (error) => {
@@ -61,7 +62,7 @@ router.post('/login', (req, res) => {
             res.status(200).json({
                 token: token,
                 username: payload.username,
-                expiresIn: payload.expiresIn
+                expiresIn: payload.expiresIn,
             })
         });
     },

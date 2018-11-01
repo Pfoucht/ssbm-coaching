@@ -6,6 +6,7 @@ const cors = require('cors');
 const createRoutes = require('./routes/create');
 const browseRoutes = require('./routes/browse');
 const authRoutes = require('./routes/auth');
+const profileRoutes = require('./routes/profile');
 
 
 require('./models/user');
@@ -29,6 +30,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/api/create', createRoutes)
 app.use('/api/browse', browseRoutes)
 app.use('/api/auth', authRoutes)
+app.use('/api/profile', profileRoutes)
 
 app.listen(8080, () => {
     console.log('Listening on port 8080')

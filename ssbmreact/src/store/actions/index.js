@@ -2,3 +2,4 @@
 
 export { authenticate, toggleAuthSlider, checkAuthState, authLogout, changeAuthMode } from './auth';
 
+export { fetchProfile, changeProfilePic } from './profile';

@@ -4,6 +4,7 @@ import styles from './Browse.css';
 import {FaHeart} from 'react-icons/fa'
 import { IconContext } from 'react-icons';
 import Card from './Card/Card';
+import BrowseNavigation from './Navigation/Navigation';
 
 class Browse extends Component {
     constructor(props) {
@@ -20,10 +21,9 @@ class Browse extends Component {
         return (
             <div>
                 <section className={styles.browseContainer}> 
+                    <BrowseNavigation/>
                     <div className={styles.container}>
-                        <h4 className={styles.flexHeader}>
-                            Melee Coaches
-                        </h4>
+
                         <div className={styles.flex}>
                             {cards}
                         </div>
@@ -33,5 +33,9 @@ class Browse extends Component {
         )
     }
 }
+
+// <h4 className={styles.flexHeader}>
+// Melee Coaches
+// </h4>
 
 export default Browse;
