@@ -40,10 +40,6 @@
     opacity: 1;
 }
 
-.profile:hover .hoverBox{
-    display: block;
-}
-
 
 .hoverBox{
     position: absolute;
@@ -55,10 +51,13 @@
     width: 240px;
     height: auto;
     border-radius: 3px;
-    display: none;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
     padding: 5px;
 
+}
+
+.hoverBoxHidden{
+    display: none;
 }
 
 .hoverList{
@@ -70,7 +69,6 @@
 
 .hoverItem, .hoverItemBorder{
     width: 100%;
-    padding: 10px 10px;
     cursor: pointer;
 }
 
@@ -89,6 +87,9 @@
     text-decoration: none;
     cursor: pointer;
     font-weight: 500;
+    padding: 10px 10px;
+    display: block;
+    width: 100%;
 }
 
 .linkBtn{

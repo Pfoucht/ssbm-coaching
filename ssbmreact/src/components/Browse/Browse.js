@@ -5,6 +5,7 @@ import {FaHeart} from 'react-icons/fa'
 import { IconContext } from 'react-icons';
 import Card from './Card/Card';
 import BrowseNavigation from './Navigation/Navigation';
+import Pagination from './Pagination/Pagination';
 
 class Browse extends Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class Browse extends Component {
                         <div className={styles.flex}>
                             {cards}
                         </div>
+                        <Pagination fetchPosts={this.props.fetchPosts} page={this.props.page}/>
                     </div>
                 </section>
             </div>

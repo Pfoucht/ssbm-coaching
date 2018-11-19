@@ -2,15 +2,11 @@ import { AUTH_LOADING, AUTH_FAIL, AUTH_SUCCESS, AUTH_SLIDE, AUTH_LOGOUT, CHANGE_
 import axios from 'axios';
 
 export const authenticate = (username, email, password, loginMode) => {
-    // Example of redux thunk with axios;
     return dispatch => {   
-
-        console.log(loginMode);
-        console.log(username, email, password);
         dispatch(authLoading());
         let authInfo = {
             username: username,
-            email, email,
+            email: email,
             password: password
         };
 
@@ -24,29 +20,29 @@ export const authenticate = (username, email, password, loginMode) => {
             .then(res => {
                 console.log(res);
 
-                const { token, username, expiration} = res.data;
+                const { token, username, expiration, profilePicture} = res.data;
 
-                setLocalStorage(token, username, 1, expiration);
+                setLocalStorage(token, username, 1, expiration, profilePicture);
 
-                dispatch(authSuccess(username, token));
+                dispatch(authSuccess(username, token, profilePicture));
             })
 
     };
 }
 
 export const toggleAuthSlider = (mode) => {
-
     return {
         type: AUTH_SLIDE,
         mode: mode
     }
 }
 
-export const authSuccess = (username, token) => {
+export const authSuccess = (username, token, profilePicture) => {
     return {
         type: AUTH_SUCCESS,
         username: username,
-        token: token
+        token: token,
+        profilePicture: profilePicture
     };
 }
 
@@ -71,11 +67,13 @@ export const changeAuthMode = (mode) => {
 }
 
 
-const setLocalStorage = (token, username, userId, expiration) => {
+const setLocalStorage = (token, username, userId, expiration, profilePicture) => {
     localStorage.setItem('token', token);
     localStorage.setItem('username', username);
     localStorage.setItem('userId', userId);
     localStorage.setItem('expiration', expiration);
+    localStorage.setItem('profilePicture', profilePicture);
+    
 }
 
 export const checkAuthState = () => {
@@ -83,6 +81,7 @@ export const checkAuthState = () => {
         const token = localStorage.getItem('token');
         const expiration = localStorage.getItem('expiration');
         const username = localStorage.getItem('username');
+        const profilePicture = localStorage.getItem('profilePicture');
     
         if(!token){
             authLogout();
@@ -94,7 +93,7 @@ export const checkAuthState = () => {
             }else if(!username){
                 dispatch(authLogout())
             }else{
-                dispatch(authSuccess(username, token));
+                dispatch(authSuccess(username, token, profilePicture));
             }
     }
 
@@ -107,6 +106,7 @@ export const authLogout = () => {
     localStorage.removeItem('username');
     localStorage.removeItem('userId');
     localStorage.removeItem('expiration');
+    localStorage.removeItem('profilePicture');
     return {
         type: AUTH_LOGOUT
     }

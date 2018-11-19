@@ -19,13 +19,16 @@ export const changeProfilePic = (fileURL, token) => {
 
 }
 
-export const fetchProfile = (username) => {
+export const fetchProfile = (username, token) => {
     return dispatch => {
         dispatch(fetchProfileLoading());
-        axios.get('http://localhost:8080/api/profile/' + username)
+        if(!token){
+            token = localStorage.getItem('token');
+        }
+        axios.get('http://localhost:8080/api/profile/' + username + "?token=" + token)
             .then(res => {
                 console.log(res);
-                dispatch(fetchProfileSuccess(res.data.username, res.data.gigs, res.data.profilePicture));
+                dispatch(fetchProfileSuccess(res.data.username, res.data.gigs, res.data.profilePicture, res.data.isOwnProfile));
             })
             .catch(error => {
                 dispatch(fetchProfileFail());
@@ -33,12 +36,13 @@ export const fetchProfile = (username) => {
     }
 } 
 
-const fetchProfileSuccess = (username, gigs, profilePicture) => {
+const fetchProfileSuccess = (username, gigs, profilePicture, isOwnProfile) => {
     return {
         type: FETCH_PROFILE_SUCCESS,
         username: username,
         gigs: gigs,
-        profilePicture: profilePicture
+        profilePicture: profilePicture,
+        isOwnProfile: isOwnProfile
     }
 }
 

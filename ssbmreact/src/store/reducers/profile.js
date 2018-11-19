@@ -5,7 +5,8 @@ const initialState = {
     profile: null,
     loading: false,
     error: null,
-    profilePicture: null
+    profilePicture: null,
+    isOwnProfile: false
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -15,7 +16,8 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 username: action.username,
                 gigs: action.gigs,
-                profilePicture: action.profilePicture
+                profilePicture: action.profilePicture,
+                isOwnProfile: action.isOwnProfile
             }
         case FETCH_GIGS_FAIL:
             return {

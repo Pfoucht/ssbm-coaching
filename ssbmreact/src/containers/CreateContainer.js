@@ -65,10 +65,21 @@ class CreateContainer extends Component{
         );
     }
 
+    changeStepHandler = step => {
+        this.setState({step: step});
+    }
+
 
     render(){
         return (
-            <Create publishGig={this.publishGigHandler} finishStepThree={this.finishStepThreeHandler} nextStep={this.nextStepHandler} step={this.state.step} finishStepTwo={this.finishStepTwoHandler}/>
+            <Create 
+                publishGig={this.publishGigHandler} 
+                finishStepThree={this.finishStepThreeHandler} 
+                nextStep={this.nextStepHandler} 
+                step={this.state.step} 
+                finishStepTwo={this.finishStepTwoHandler}
+                changeStep={this.changeStepHandler}
+                />
         );
     }
 }

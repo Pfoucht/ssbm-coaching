@@ -11,7 +11,8 @@ class ProfileContainer extends Component{
     componentDidMount(){
         console.log(this.props);
         let username = this.props.match.params.username;
-        this.props.onFetchProfile(username);
+        console.log(this.props.token);
+        this.props.onFetchProfile(username, this.props.token);
     }
 
     changeProfilePicHandler = (fileURL) => {
@@ -20,7 +21,11 @@ class ProfileContainer extends Component{
 
     render(){
         return (
-            <Profile profilePicture={this.props.profilePicture} changeProfilePicture={this.changeProfilePicHandler} username={this.props.username} gigs={this.props.gigs}/>
+            <Profile
+                isOwnProfile={this.props.isOwnProfile}
+                profilePicture={this.props.profilePicture} 
+                changeProfilePicture={this.changeProfilePicHandler} 
+                username={this.props.username} gigs={this.props.gigs}/>
         )
     }
 }
@@ -32,7 +37,9 @@ const mapStateToProps = state => {
             gigs: state.profile.gigs,
             loading: state.profile.loading,
             token: state.auth.token,
-            profilePicture: state.profile.profilePicture
+            profilePicture: state.profile.profilePicture,
+            authUsername: state.auth.username,
+            isOwnProfile: state.profile.isOwnProfile
         }
     }
 }
@@ -40,7 +47,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return dispatch => {
         return {
-            onFetchProfile: (username) => dispatch(fetchProfile(username)),
+            onFetchProfile: (username, token) => dispatch(fetchProfile(username, token)),
             onChangePicture: (fileURL, token) => dispatch(changeProfilePic(fileURL, token))
         }
     }

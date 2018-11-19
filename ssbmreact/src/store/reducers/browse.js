@@ -1,10 +1,11 @@
-import { FETCH_GIGS_LOADING, FETCH_GIGS_SUCCESS, FETCH_GIGS_FAIL, FETCH_SINGLE_GIG_SUCCESS } from "../actions/actionTypes";
+import { FETCH_GIGS_LOADING, FETCH_GIGS_SUCCESS, FETCH_GIGS_FAIL, FETCH_SINGLE_GIG_SUCCESS, SET_BROWSE_PAGE, RESET_GIGS } from "../actions/actionTypes";
 
 const initialState = {
     posts: null,
     loading: false,
     error: null,
-    detailPost: null
+    detailPost: null,
+    page: 1
 }
 
 const browseReducer = (state = initialState, action) => {
@@ -25,13 +26,23 @@ const browseReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                posts: action.posts
+                posts: action.posts,
             }
         case FETCH_GIGS_FAIL:
             return {
                 ...state,
                 loading: false,
                 error: action.error
+            }
+        case SET_BROWSE_PAGE:
+            return {
+                ...state,
+                page: action.page
+            }
+        case RESET_GIGS:
+            return {
+                ...state,
+                posts: null
             }
         default:
             return {

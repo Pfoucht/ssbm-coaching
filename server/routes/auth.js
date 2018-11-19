@@ -63,6 +63,7 @@ router.post('/login', (req, res) => {
                 token: token,
                 username: payload.username,
                 expiresIn: payload.expiresIn,
+                profilePicture: user.profilePicture
             })
         });
     },

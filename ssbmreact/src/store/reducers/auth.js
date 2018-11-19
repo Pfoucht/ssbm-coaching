@@ -6,7 +6,8 @@ const initialState = {
     loading: false,
     error: null,
     sliderOpen: false,
-    authMode: 'login'
+    authMode: 'login',
+    profilePicture: null
 };
 
 const authReducer = (state = initialState, action) => {
@@ -22,7 +23,8 @@ const authReducer = (state = initialState, action) => {
                 loading: false,
                 username: action.username,
                 token: action.token,
-                sliderOpen: false
+                sliderOpen: false,
+                profilePicture: action.profilePicture
             }
         case AUTH_FAIL:
             return {

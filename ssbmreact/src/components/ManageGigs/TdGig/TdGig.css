@@ -1,0 +1,36 @@
+
+.square{
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    display: block;
+}
+
+.td{
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.tbody .td:first-child{
+    padding-left: 20px !important;
+}
+
+.gigTd{
+    white-space: normal;
+    font-size: 14px;
+    line-height: 16px;
+    vertical-align: middle;
+}
+
+.icon{
+    cursor: pointer;
+}
+
+
+.tr{
+
+}
+
+.tr:not(:last-child){
+    border-bottom: 1px solid #ccc;
+}

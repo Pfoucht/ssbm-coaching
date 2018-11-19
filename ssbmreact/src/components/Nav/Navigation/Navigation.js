@@ -6,6 +6,19 @@ const pic = require('../../../assets/dakota.jpg');
 
 class Navigation extends Component {
 
+    state = {
+        dropdownShown: false
+    }
+
+    toggleDropdownHandler = () => {
+        this.setState((prevState) => {
+            return {
+                dropdownShown: !prevState.dropdownShown
+            }
+        })
+    }
+
+
 
     render(){
         let nav = (
@@ -33,15 +46,15 @@ class Navigation extends Component {
                 <li className={styles.item}>
                     <Link to="/inbox" className={styles.link} >Messages</Link>
                 </li>
-                <li className={[styles.item, styles.profile].join(' ')}>
-                    <img src={pic} className={styles.pic} />
-                    <div className={styles.hoverBox}>
+                <li className={[styles.item, styles.profile].join(' ')} onClick={this.toggleDropdownHandler}>
+                    <img src={this.props.profilePicture || 'https://education.fsu.edu/wp-content/uploads/2018/07/placeholder.png'} className={styles.pic} />
+                    <div className={styles.hoverBox} className={this.state.dropdownShown ? styles.hoverBox : styles.hoverBoxHidden}>
                         <ul className={styles.hoverList}>
                             <li className={styles.hoverItem}>
-                                <Link to="/profile" className={styles.hoverLink}>My Profile</Link>
+                                <Link to={"/profile/" + this.props.username} className={styles.hoverLink}>My Profile</Link>
                             </li>
                             <li className={styles.hoverItem}>
-                                <Link to="/profile" className={styles.hoverLink}>Coaching Gigs</Link>
+                                <Link to="/manage" className={styles.hoverLink}>Coaching Gigs</Link>
                             </li>
                             <li className={styles.hoverItem}>
                                 <Link to="/settings" className={styles.hoverLink}>Settings</Link>

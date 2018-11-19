@@ -26,7 +26,10 @@ class Nav extends Component {
 
     searchHandler = (e) => {
         e.preventDefault();
-        this.props.history.push('/browse/');
+        this.props.history.push({
+            pathane: '/browse',
+            search: '?search=' + this.state.search
+        });
         this.setState({
             search: ''
         });
@@ -49,7 +52,11 @@ class Nav extends Component {
                 <button className={styles.btn} type="submit">Search</button>
                 </form>
                 </div>
-                <Navigation logout={this.props.logout} onClick={this.onClick} isAuthenticated={this.props.isAuthenticated}/>
+                <Navigation  
+                    username={this.props.username}
+                    profilePicture={this.props.profilePicture} 
+                    logout={this.props.logout} onClick={this.onClick} 
+                    isAuthenticated={this.props.isAuthenticated}/>
             </div>
         )
     }

@@ -1,12 +1,15 @@
 import axios from 'axios';
-import { FETCH_GIGS_LOADING, FETCH_GIGS_SUCCESS, FETCH_GIGS_FAIL, FETCH_SINGLE_GIG_SUCCESS } from './actionTypes';
+import { FETCH_GIGS_LOADING, FETCH_GIGS_SUCCESS, FETCH_GIGS_FAIL, FETCH_SINGLE_GIG_SUCCESS, SET_BROWSE_PAGE, RESET_GIGS } from './actionTypes';
 
 
-export const fetchGigs = () => {
+export const fetchGigs = (page = 1) => {
     return dispatch => {
-        console.log('running fetch')
+        console.log('running fetch');
+        dispatch(resetGigs());
+        window.scroll(0, 0);
+        dispatch(setBrowsePage(page));
         dispatch(fetchGigsLoading());
-        axios.get('http://localhost:8080/api/browse')
+        axios.get('http://localhost:8080/api/browse?page=' + page)
             .then(res => {
                 console.log(res);
                 dispatch(fetchGigsSuccess(res.data.posts));
@@ -28,6 +31,26 @@ export const fetchSingleGig = (id) => {
             .catch(err => {
                 dispatch(fetchGigsFail(err));
             })
+    }
+}
+
+export const searchForGigs = (search) => {
+    return dispatch => {
+        dispatch(fetchGigsLoading());
+        axios.get('http://localhost:8080/api/browse/search/' + search)
+            .then(res => {
+                dispatch(fetchGigsSuccess(res.data.posts));
+            })
+            .catch(err => {
+                dispatch(fetchGigsFail(err));
+            })
+    }
+}
+
+const setBrowsePage = (page) => {
+    return {
+        type: SET_BROWSE_PAGE,
+        page: page
     }
 }
 
@@ -54,5 +77,11 @@ const fetchGigsSuccess = (posts) => {
 const fetchGigsFail = () => {
     return {
         type: FETCH_GIGS_FAIL
+    }
+}
+
+const resetGigs = () => {
+    return {
+        type: RESET_GIGS,
     }
 }

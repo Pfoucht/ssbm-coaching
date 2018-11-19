@@ -11,4 +11,10 @@ const gigSchema = new Schema({
     coverPhoto: {type: String}
 });
 
+gigSchema.index({
+    title: 'text',
+    game: 'text',
+    characters: 'text'
+});
+
 module.exports = mongoose.model('Gig', gigSchema);

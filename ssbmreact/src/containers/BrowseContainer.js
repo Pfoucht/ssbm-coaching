@@ -7,13 +7,15 @@ class BrowseContainer extends Component{
     
 
     componentDidMount(){
-        this.props.onFetchPosts();
+        console.log(this.props);
+        let searchQuery = this.props.match.query;
+        this.props.onFetchPosts(1);
     }
 
 
     render(){
         return (
-            <Browse posts={this.props.posts}/>
+            <Browse posts={this.props.posts} fetchPosts={this.props.onFetchPosts} page={this.props.page}/>
         )
     }
 }
@@ -22,7 +24,8 @@ const mapStateToProps = state => {
     return state => {
         return {
             posts: state.browse.posts,
-            loading: state.browse.loading
+            loading: state.browse.loading,
+            page: state.browse.page
         }
     }
 }
@@ -30,7 +33,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return dispatch => {
             return {
-                onFetchPosts: () => dispatch(fetchGigs())
+                onFetchPosts: (page) => dispatch(fetchGigs(page))
         }
     }
 }

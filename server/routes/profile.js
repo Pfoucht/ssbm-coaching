@@ -6,6 +6,18 @@ const jwt = require('jsonwebtoken');
 
 
 router.get('/:username', (req, res, next) => {
+    let token = req.query.token;
+
+    let authUsername;
+
+    jwt.verify(token, 'secretkey', (err, decoded) => {
+        if(err){
+            return;
+        }else{
+            authUsername = decoded.username;
+        }
+    });
+
     User.findOne({username: req.params.username})
         .populate('gigs')
         .exec((err, theUser) => {
@@ -13,10 +25,18 @@ router.get('/:username', (req, res, next) => {
                 console.log(err);
                 return;
             }
+            let isOwnProfile = false;
+            console.log(authUsername);
+            console.log(token);
+            console.log(req.params.username);
+            if(authUsername === req.params.username){
+                isOwnProfile = true;
+            }
             return res.status(200).json({
                 username: theUser.username,
                 gigs: theUser.gigs,
-                profilePicture: theUser.profilePicture
+                profilePicture: theUser.profilePicture,
+                isOwnProfile: isOwnProfile
             })
         })
 });

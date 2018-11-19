@@ -2,6 +2,7 @@
     background-color: #eee;
     background: #fbfbfb;
     max-width: 1080px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -94,6 +95,18 @@
     background-color: #fff;
 }
 
+.previewBtn{
+    padding: 10px 14px;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    color: #555;
+    border-radius: 3px;
+    margin: 20px 0;
+    margin-right: 20px;
+    cursor: pointer; 
+}
+
 .profileList{
 
 }
@@ -128,6 +141,15 @@
     justify-content: space-between;
     animation: .4s fadeIn ease-out both;
 }
+
+.cardFlexbox{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    animation: .4s fadeIn ease-out both;
+    flex-wrap: wrap;
+}
+
 
 .flexOneThird{
     width: 25.333333%;
@@ -367,4 +389,16 @@
 .submitBtn{
     background-color: rgb(85, 15, 255);
     color: #fff;
+}
+
+
+/* create gig */
+
+.createGig{
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
 }
