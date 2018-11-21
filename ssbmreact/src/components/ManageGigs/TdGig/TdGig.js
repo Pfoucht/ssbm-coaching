@@ -9,7 +9,7 @@ import styles from './TdGig.css';
 const tdGig = props => (
     <tr className={styles.tr}>
     <td className={styles.td}>
-         <span className={styles.square}></span>
+         <input type="checkbox" />
     </td>
     <td className={styles.td}>
     <img src="https://fiverr-res.cloudinary.com/images/t_small_thumbnail,q_auto,f_auto/gigs/113858669/original/7684343f42bd5a556cf69c60af8e46d358d70754/design-and-create-a-responsive-website-for-free.png" alt="gig coverphoto"/>

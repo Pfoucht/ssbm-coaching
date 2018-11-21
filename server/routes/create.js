@@ -8,6 +8,7 @@ router.post('/', function(req, res, next){
 
     const token = req.query.token;
     let username = null;
+    let userId = null;
     console.log(token);
     jwt.verify(token, 'secretkey', function(err, decoded) {
         if(err){
@@ -17,6 +18,7 @@ router.post('/', function(req, res, next){
         }
         console.log(decoded);
         username = decoded.username;
+        userId = decoded.userId;
       });
 
 
@@ -28,7 +30,8 @@ router.post('/', function(req, res, next){
         rank: req.body.rank,
         characters: req.body.characters,
         description: req.body.description,
-        coverPhoto: req.body.coverPhoto
+        coverPhoto: req.body.coverPhoto,
+        creator: userId
     });
 
 

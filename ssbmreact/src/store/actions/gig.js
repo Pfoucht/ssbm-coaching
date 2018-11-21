@@ -24,7 +24,6 @@ export const createGig = (title, game, rank, pricing, characters, desc, coverPho
             dispatch(createGigFail());
         })
     }
-
 }
 
 

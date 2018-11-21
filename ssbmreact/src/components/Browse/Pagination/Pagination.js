@@ -18,7 +18,7 @@ const pagination = (props) => {
     return (
         <div className={styles.container}>
         <div className={styles.flex}>
-            {props.page == 1 ?
+            {props.page === 1 ?
                 null
                 :
             <div className={styles.number}>

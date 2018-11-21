@@ -8,7 +8,8 @@ const gigSchema = new Schema({
     rank: {type: String},
     game: {type: String},
     characters: [],
-    coverPhoto: {type: String}
+    coverPhoto: {type: String},
+    creator: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });
 
 gigSchema.index({

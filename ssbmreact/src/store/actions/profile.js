@@ -14,9 +14,24 @@ export const changeProfilePic = (fileURL, token) => {
         })
         .catch(error => {
 
-        })
+        });
     }
 
+}
+
+export const changeProfileBio = (desc, token) => {
+    return dispatch => {
+        let obj = {
+            description: desc
+        }
+        axios.post('http://localhost:8080/api/profile/description?token=' + token, obj)
+            .then(res => {
+                dispatch(changeProfileBioSuccess(res.data.bio));
+            })
+            .catch(err => {
+
+            });
+    }
 }
 
 export const fetchProfile = (username, token) => {
@@ -65,5 +80,12 @@ const changeProfilePicSuccess = (fileURL) => {
     return {
         type: CHANGE_PROFILE_PIC_SUCCESS,
         fileURL: fileURL
+    }
+}
+
+const changeProfileBioSuccess = (desc) => {
+    return {
+        type: CHANGE_PROFILE_PIC_SUCCESS,
+        description: desc
     }
 }
