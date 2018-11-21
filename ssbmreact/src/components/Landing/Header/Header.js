@@ -11,7 +11,7 @@ const header = props => (
                 <button className={styles.btn}>Sign up</button>
             </div>
             <div className={styles.containerRight}>
-                <img className={styles.headerImg} src="https://pre00.deviantart.net/0c7a/th/pre/i/2015/269/6/5/fire_emblem__marth_by_hakuramen-d9b1y6v.png"/>
+                <img className={styles.headerImg} src="http://vignette99.wikia.nocookie.net/fireemblem/images/3/31/Marth_Heroes_2.png/revision/latest?cb=20170120194457"/>
             </div>
         </div>
     </header>   

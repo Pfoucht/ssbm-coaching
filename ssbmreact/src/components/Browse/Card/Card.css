@@ -1,32 +1,30 @@
 .card{
     background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+    box-shadow: 0 3px 11px 2px rgba(0, 0, 0, .1);
     width: 260px;
     min-height: 230px;
     margin-right: 25px;
     margin-bottom: 25px;
     cursor: pointer;
-    transition: .3s;
+    transition: all .3s ease;
     text-decoration: none;
     color: inherit;
     width: 250px;
-    border: 1px solid #cfcfcf;
     color: #333;
     overflow: hidden;
     border-radius: 3px;
 
 }
 
+.card:hover{
+    box-shadow: 0 5px 20px 5px rgba(0, 0, 0, .15);
+    transform: translateY(-3px);
+}
 
 .cardImg{
     height: 120px;
     width: 100%;
     object-fit: cover;
-}
-
-.card:hover{
-box-shadow: rgba(0, 0, 0, 0.2) 2px 3px 6px 0px;
-transform: translateY(-2px);
 }
 
 .title{
@@ -55,8 +53,7 @@ transform: translateY(-2px);
 }
 
 .cardContent{
-    padding: 10px 10px;
-    padding: 10px 10px 10px 10px;
+    padding: 15px;
 }
 
 /* .cardFooter{

@@ -30,7 +30,6 @@ const pagination = (props) => {
             </div>
         }
 
-            <div></div>
             {numbers}
             <div className={styles.number}>
                 <IconContext.Provider value={{color: '#373737', size: '1rem'}}>
