@@ -4,4 +4,4 @@ export { authenticate, toggleAuthSlider, checkAuthState, authLogout, changeAuthM
 
 export { fetchProfile, changeProfilePic } from './profile';
 
-export { searchForGigs } from './browse';
+export { searchForGigs, nextPage, prevPage } from './browse';

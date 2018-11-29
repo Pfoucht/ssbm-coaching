@@ -1,4 +1,4 @@
-import { FETCH_PROFILE_SUCCESS, FETCH_GIGS_FAIL, FETCH_GIGS_LOADING, CHANGE_PROFILE_PIC_SUCCESS } from "../actions/actionTypes";
+import { FETCH_PROFILE_SUCCESS, FETCH_GIGS_FAIL, FETCH_GIGS_LOADING, CHANGE_PROFILE_PIC_SUCCESS, CHANGE_PROFILE_BIO_SUCCESS } from "../actions/actionTypes";
 import { isNull } from "util";
 
 const initialState = {
@@ -33,6 +33,10 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 profileImg: action.fileURL
+            }
+        case CHANGE_PROFILE_BIO_SUCCESS:
+            return {
+                ...state
             }
         default: return state;
     }

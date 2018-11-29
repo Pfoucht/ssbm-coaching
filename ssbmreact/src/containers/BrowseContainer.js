@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Browse from '../components/Browse/Browse';
 import { connect } from 'react-redux';
-import { fetchGigs } from '../store/actions/browse';
+import { fetchGigs, prevPage, nextPage } from '../store/actions/browse';
 
 class BrowseContainer extends Component{
     
@@ -15,7 +15,7 @@ class BrowseContainer extends Component{
 
     render(){
         return (
-            <Browse posts={this.props.posts} fetchPosts={this.props.onFetchPosts} page={this.props.page}/>
+            <Browse nextPage={this.props.onNextPage} prevPage={this.props.onPrevPage} count={this.props.count} posts={this.props.posts} fetchPosts={this.props.onFetchPosts} page={this.props.page}/>
         )
     }
 }
@@ -25,7 +25,8 @@ const mapStateToProps = state => {
         return {
             posts: state.browse.posts,
             loading: state.browse.loading,
-            page: state.browse.page
+            page: state.browse.page,
+            count: state.browse.count
         }
     }
 }
@@ -33,7 +34,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return dispatch => {
             return {
-                onFetchPosts: (page) => dispatch(fetchGigs(page))
+                onFetchPosts: (page) => dispatch(fetchGigs(page)),
+                onPrevPage: () => dispatch(prevPage()),
+                onNextPage: () => dispatch(nextPage())
         }
     }
 }

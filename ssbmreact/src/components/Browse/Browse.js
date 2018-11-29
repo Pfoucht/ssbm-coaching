@@ -28,7 +28,12 @@ class Browse extends Component {
                         <div className={styles.flex}>
                             {cards}
                         </div>
-                        <Pagination fetchPosts={this.props.fetchPosts} page={this.props.page}/>
+                        <Pagination 
+                            prevPage={this.props.prevPage} 
+                            nextPage={this.props.nextPage} 
+                            count={this.props.count} 
+                            fetchPosts={this.props.fetchPosts} 
+                            page={this.props.page}/>
                     </div>
                 </section>
             </div>

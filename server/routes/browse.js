@@ -7,13 +7,27 @@ router.get('/', function(req, res, next){
     let gigLimit = req.query.limit || 12;
     console.log(req.query.page);
     Gig.find({})
+        .populate('creator', "-password -gigs -description")
         .skip((req.query.page - 1) * 12 || 0)
         .limit(12)
-        .then(posts => {
-            return res.json({
-                posts: posts
+        .exec((err, posts) => {
+            Gig.countDocuments().exec((error, count) => {
+                if(error){
+                    console.log(error);
+                }else{
+                    return res.json({
+                        posts: posts,
+                        totalCount: count
+                    })
+                }
             })
+
         })
+        // .then(posts => {
+        //     return res.json({
+        //         posts: posts
+        //     })
+        // })
 });
 
 router.get('/:id', function(req, res, next){

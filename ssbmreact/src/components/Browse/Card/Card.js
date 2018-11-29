@@ -11,7 +11,7 @@ const card = (props) => (
         <img src={props.el.coverPhoto || "http://a.espncdn.com/combiner/i?img=/photo/2016/0121/r46911_800x450_16-9.jpg&w=800"} className={styles.cardImg} />
         <div className={styles.cardContent}>
             <div className={styles.profileContainer}>
-            <img className={styles.profilePic} src={props.profilePicture || 'https://education.fsu.edu/wp-content/uploads/2018/07/placeholder.png'} />
+            <img className={styles.profilePic} src={props.el.creator ? props.el.creator.profilePicture : 'https://education.fsu.edu/wp-content/uploads/2018/07/placeholder.png'} />
             <span className={styles.profileName}>{props.profileName || 'b0aty'}</span>
             </div>
             <h5 className={styles.title}>{props.el.title}</h5>

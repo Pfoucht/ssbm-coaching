@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_GIGS_LOADING, FETCH_GIGS_SUCCESS, FETCH_GIGS_FAIL, FETCH_SINGLE_GIG_SUCCESS, SET_BROWSE_PAGE, RESET_GIGS } from './actionTypes';
+import { FETCH_GIGS_LOADING, FETCH_GIGS_SUCCESS, FETCH_GIGS_FAIL, FETCH_SINGLE_GIG_SUCCESS, SET_BROWSE_PAGE, RESET_GIGS, NEXT_PAGE, PREV_PAGE } from './actionTypes';
 
 
 export const fetchGigs = (page = 1) => {
@@ -12,7 +12,7 @@ export const fetchGigs = (page = 1) => {
         axios.get('http://localhost:8080/api/browse?page=' + page)
             .then(res => {
                 console.log(res);
-                dispatch(fetchGigsSuccess(res.data.posts));
+                dispatch(fetchGigsSuccess(res.data.posts, res.data.totalCount));
             })
             .catch(err => {
                 dispatch(fetchGigsFail(err));
@@ -67,10 +67,11 @@ const fetchGigsLoading = () => {
     }
 }
 
-const fetchGigsSuccess = (posts) => {
+const fetchGigsSuccess = (posts, count) => {
     return {
         type: FETCH_GIGS_SUCCESS,
-        posts: posts
+        posts: posts,
+        count: count
     }
 }
 
@@ -83,5 +84,17 @@ const fetchGigsFail = () => {
 const resetGigs = () => {
     return {
         type: RESET_GIGS,
+    }
+}
+
+export const nextPage = () => {
+    return {
+      type: NEXT_PAGE  
+    }
+}
+
+export const prevPage = () => {
+    return {
+      type: PREV_PAGE
     }
 }

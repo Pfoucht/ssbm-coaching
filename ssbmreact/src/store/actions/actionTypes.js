@@ -25,6 +25,8 @@ export const FETCH_GIGS_SUCCESS = 'FETCH_GIGS_SUCCESS';
 export const FETCH_GIGS_FAIL = 'FETCH_GIGS_FAIL';
 export const SET_BROWSE_PAGE = 'SET_BROWSE_PAGE';
 export const RESET_GIGS = 'RESET_GIGS';
+export const NEXT_PAGE = 'NEXT_PAGE';
+export const PREV_PAGE = 'PREV_PAGE';
 
 export const FETCH_SINGLE_GIG_SUCCESS = 'FETCH_SINGLE_GIG_SUCCESS';
 

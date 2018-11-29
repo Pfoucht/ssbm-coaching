@@ -7,8 +7,11 @@ import { IconContext } from 'react-icons';
 
 const pagination = (props) => {
 
-    let numbers = []
-    for(let i=1; i<=6; i++){
+    console.log(props);
+
+    let numbers = [];
+    let maxCount = Math.ceil(props.count / 12);
+    for(let i=1; i<=maxCount; i++){
         numbers.push(<div
              className={props.page == i ? styles.numberActive : styles.number}
              onClick={() => props.fetchPosts(i)}
@@ -21,7 +24,7 @@ const pagination = (props) => {
             {props.page === 1 ?
                 null
                 :
-            <div className={styles.number}>
+            <div className={styles.number} onClick={props.fetchPosts(props.page - 1)}>
                 <IconContext.Provider value={{color: '#373737', size: '1rem'}}>
                 <div>
                     <FaArrowLeft/>
@@ -31,13 +34,16 @@ const pagination = (props) => {
         }
 
             {numbers}
-            <div className={styles.number}>
+            {props.page !== maxCount ?
+            <div className={styles.number} onClick={() => props.fetchPosts(props.page + 1)}>
                 <IconContext.Provider value={{color: '#373737', size: '1rem'}}>
                 <div>
                     <FaArrowRight/>
                 </div>
                 </IconContext.Provider>
             </div>
+            :null
+            }
             </div>
         </div>
     )
