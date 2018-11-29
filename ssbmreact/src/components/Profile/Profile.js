@@ -117,6 +117,7 @@ class Profile extends Component {
             <div className={styles.wrapper}>
                 <div className={styles.profileContainer}>
                     <header className={styles.header}>
+                        <div className={styles.headerLeft}>
                         <div className={styles.profilePicContainer}>
                             <img src={this.props.profilePicture || 'https://education.fsu.edu/wp-content/uploads/2018/07/placeholder.png'} className={styles.profilePic}/>
                             <div className={styles.profilePicHover}>
@@ -125,11 +126,22 @@ class Profile extends Component {
                                 </Dropzone>
                             </div>
                         </div>
-
                         <div className={styles.info}>
-                            <h2 className={styles.profileName}>{this.props.username}</h2>
-                            <p className={styles.p}>Super Smash Bros Melee</p>
-                            <p className={styles.p}>20xx Fox coach</p>
+                        <h2 className={styles.profileName}>{this.props.username}</h2>
+                        <p className={styles.p}>Super Smash Bros Melee</p>
+                        <p className={styles.p}>20xx Fox coach</p>
+
+                    </div>
+                        </div>
+
+                        <div className={styles.headerCenter}>
+                            <p className={styles.p}>
+                            I am a profession Fortnite player, and can help you start winning your matches. I am in a pacific time zone and can coach up to 10 hours a week. Feel free to send me a message! I am a profession Fortnite player, and can help you start winning your matches.
+                            </p>                        
+                        </div>
+
+                        <div className={styles.headerRight}>
+                            <div>
                             {this.props.isOwnProfile ? 
                                 <div>
                                     <button className={styles.previewBtn}>Preview Public Mode</button>
@@ -140,10 +152,6 @@ class Profile extends Component {
                                     <button className={[styles.profileBtn, styles.profileBtnLight].join(' ')}>Get Details</button>
                                 </div>
                             }
-
-                        </div>
-                        <div className={styles.headerRight}>
-                            <div>
                                 <ul className={styles.list}>
                                     <li className={styles.item}>
                                         <div className={styles.itemLeft}>

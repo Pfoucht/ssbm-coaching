@@ -5,7 +5,8 @@ const initialState = {
     loading: false,
     error: null,
     detailPost: null,
-    page: 1
+    page: 1,
+    search: null
 }
 
 const browseReducer = (state = initialState, action) => {
@@ -27,6 +28,7 @@ const browseReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 posts: action.posts,
+                search: action.search
             }
         case FETCH_GIGS_FAIL:
             return {

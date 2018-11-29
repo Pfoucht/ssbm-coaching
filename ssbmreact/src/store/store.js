@@ -4,9 +4,13 @@ import rootReducer from './reducers/rootReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 export default function configureStore(initialState = {showNav: false}) {
-    return createStore(
+    // return createStore(
+    //     rootReducer,
+    //     composeWithDevTools(
+    //     applyMiddleware(thunk))
+    // );
+       return createStore(
         rootReducer,
-        composeWithDevTools(
-        applyMiddleware(thunk))
+        applyMiddleware(thunk)
     );
 }
