@@ -39,7 +39,7 @@ export const searchForGigs = (search) => {
         dispatch(fetchGigsLoading());
         axios.get('http://localhost:8080/api/browse/search/' + search)
             .then(res => {
-                dispatch(fetchGigsSuccess(res.data.posts));
+                dispatch(fetchGigsSuccess(res.data.posts, search));
             })
             .catch(err => {
                 dispatch(fetchGigsFail(err));
@@ -67,11 +67,19 @@ const fetchGigsLoading = () => {
     }
 }
 
+<<<<<<< HEAD
 const fetchGigsSuccess = (posts, count) => {
     return {
         type: FETCH_GIGS_SUCCESS,
         posts: posts,
         count: count
+=======
+const fetchGigsSuccess = (posts, search = null) => {
+    return {
+        type: FETCH_GIGS_SUCCESS,
+        posts: posts,
+        search: search
+>>>>>>> 3e4160ba93012125ec9036a81e4b097d23c202b4
     }
 }
 

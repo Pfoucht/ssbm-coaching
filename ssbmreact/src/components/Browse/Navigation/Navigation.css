@@ -2,7 +2,10 @@
 
 .wrapper{
     width: 100%;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
+    background-color: #f7f8fa;
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
 }
 
 .container{
@@ -51,6 +54,13 @@
     height: 40px;
     width: 200px;
     background-color: #fff;
+    border: 1px solid  #007791;
+    background-color: #fff;
+    color: #007791;
+}
+
+.select:hover, .pricingSelect:hover{
+    cursor: pointer;
 }
 
 .pricingSelect{

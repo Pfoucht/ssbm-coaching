@@ -15,7 +15,11 @@ class BrowseContainer extends Component{
 
     render(){
         return (
+<<<<<<< HEAD
             <Browse nextPage={this.props.onNextPage} prevPage={this.props.onPrevPage} count={this.props.count} posts={this.props.posts} fetchPosts={this.props.onFetchPosts} page={this.props.page}/>
+=======
+            <Browse loading={this.props.loading} posts={this.props.posts} fetchPosts={this.props.onFetchPosts} page={this.props.page}/>
+>>>>>>> 3e4160ba93012125ec9036a81e4b097d23c202b4
         )
     }
 }

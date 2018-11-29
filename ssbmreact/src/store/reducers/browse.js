@@ -6,7 +6,11 @@ const initialState = {
     error: null,
     detailPost: null,
     page: 1,
+<<<<<<< HEAD
     count: 0
+=======
+    search: null
+>>>>>>> 3e4160ba93012125ec9036a81e4b097d23c202b4
 }
 
 const browseReducer = (state = initialState, action) => {
@@ -28,7 +32,11 @@ const browseReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 posts: action.posts,
+<<<<<<< HEAD
                 count: action.count
+=======
+                search: action.search
+>>>>>>> 3e4160ba93012125ec9036a81e4b097d23c202b4
             }
         case FETCH_GIGS_FAIL:
             return {

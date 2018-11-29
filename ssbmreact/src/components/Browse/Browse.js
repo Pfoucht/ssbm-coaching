@@ -6,7 +6,7 @@ import { IconContext } from 'react-icons';
 import Card from './Card/Card';
 import BrowseNavigation from './Navigation/Navigation';
 import Pagination from './Pagination/Pagination';
-
+import Spinner from '../UI/Spinner/Spinner';
 class Browse extends Component {
     constructor(props) {
         super(props);
@@ -14,17 +14,21 @@ class Browse extends Component {
 
     render() {
         let cards = null;
+        if(this.props.loading){
+            cards = <Spinner/>
+        }
         if(this.props.posts && this.props.posts.length > 0){
             cards = this.props.posts.map(el => {
                 return <Card el={el} />
             })
-        }
+        };
+
+
         return (
             <div>
                 <section className={styles.browseContainer}> 
                     <BrowseNavigation/>
                     <div className={styles.container}>
-
                         <div className={styles.flex}>
                             {cards}
                         </div>
