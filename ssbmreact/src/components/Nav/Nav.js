@@ -37,6 +37,8 @@ class Nav extends Component {
 
     render() {
         return (
+            <div className={styles.navWrapper}>
+            <div className={styles.navContainer}>
             <div className={styles.mainNav}>
                 <div className={styles.left}>
                 <h1 className={styles.brand}><Link className={styles.link} to="/">coach.gg</Link></h1>
@@ -57,6 +59,8 @@ class Nav extends Component {
                     profilePicture={this.props.profilePicture} 
                     logout={this.props.logout} onClick={this.onClick} 
                     isAuthenticated={this.props.isAuthenticated}/>
+            </div>
+            </div>
             </div>
         )
     }

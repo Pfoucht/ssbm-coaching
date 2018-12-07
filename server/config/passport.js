@@ -17,11 +17,13 @@ passport.use(new LocalStrategy({
     }, async (username, password, done) => {
         try {
             console.log(username);
+            console.log("Password is " + password);
             const userDocument = await User.findOne({ username: username }).exec();
             const passwordMatch = await userDocument.validatePassword(password);
-            
+            console.log('IM RIGHT HERE');
             console.log(userDocument)
             console.log(passwordMatch)
+            
             if(passwordMatch){
                 console.log('password match')
                 return done(null, userDocument);

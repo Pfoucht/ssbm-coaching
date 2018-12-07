@@ -28,6 +28,8 @@ export const RESET_GIGS = 'RESET_GIGS';
 export const NEXT_PAGE = 'NEXT_PAGE';
 export const PREV_PAGE = 'PREV_PAGE';
 
+export const SORT_GAME = 'SORT_GAME';
+
 export const FETCH_SINGLE_GIG_SUCCESS = 'FETCH_SINGLE_GIG_SUCCESS';
 
 

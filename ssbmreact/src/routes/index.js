@@ -13,6 +13,7 @@ import InboxContainer from '../containers/InboxContainer';
 import BrowseContainer from '../containers/BrowseContainer';
 import ProfileContainer from '../containers/ProfileContainer';
 import ManageGigs from '../components/ManageGigs/ManageGigs';
+import Search from '../components/Search/Search';
 
   export default () => (
         <Switch>
@@ -23,6 +24,7 @@ import ManageGigs from '../components/ManageGigs/ManageGigs';
             <Route path="/detail/:id" component={GigDetailContainer} />
             <Route path="/inbox" component={InboxContainer} />
             <Route path="/manage" component={ManageGigs} />
+            <Route path="/search" component={Search}/>
         </Switch>
   )
 

@@ -7,8 +7,9 @@ router.get('/', function(req, res, next){
     let gigLimit = req.query.limit || 12;
     console.log(req.query.page);
     Gig.find({})
-        .populate('creator', "-password -gigs -description")
-        .skip((req.query.page - 1) * 12 || 0)
+    .populate('creator', "-password -gigs -description")
+    // .populate('creator')
+    .skip((req.query.page - 1) * 12 || 0)
         .limit(12)
         .exec((err, posts) => {
             Gig.countDocuments().exec((error, count) => {
@@ -21,7 +22,6 @@ router.get('/', function(req, res, next){
                     })
                 }
             })
-
         })
         // .then(posts => {
         //     return res.json({
@@ -48,6 +48,28 @@ router.get('/search/:search', (req, res, next) => {
                 posts: posts
             });
         });
+});
+
+
+router.get('/sortGame/:game', (req, res, next) => {
+    console.log(req.params.game);
+    Gig.find({game: req.params.game})
+    // .populate('creator', "-password -gigs -description")
+    .populate('creator')
+    .skip((req.query.page - 1) * 12 || 0)
+        .limit(12)
+        .exec((err, posts) => {
+            Gig.countDocuments().exec((error, count) => {
+                if(error){
+                    console.log(error);
+                }else{
+                    return res.json({
+                        posts: posts,
+                        totalCount: count
+                    })
+                }
+            })
+        })
 });
 
 module.exports = router;

@@ -1,0 +1,12 @@
+.container{
+    max-width: 1080px;
+    margin: 30px auto;
+}
+
+.wrapper{
+    background-color: #fff;
+}
+
+.row{
+    width: 80%;
+}

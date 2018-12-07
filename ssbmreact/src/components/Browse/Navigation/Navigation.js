@@ -9,7 +9,7 @@ class BrowseNavigation extends Component {
             <div className={styles.container}>
                 <div className={styles.item}>
                     <span className={styles.title}>Game</span>
-                    <select className={styles.select}>
+                    <select className={styles.select} onChange={(e) => this.props.sortByGame(e.target.value) }>
                         <option>Fortnite</option>
                         <option>World of Warcraft</option>
                         <option>Overwatch</option>

@@ -1,12 +1,25 @@
+.navWrapper{
+    width: 100%;
+    display: block;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px -4px rgba(0, 0, 0, .18);
+    border-bottom: 1px solid #efefef;
+}
+
+.navContainer{
+    max-width: 1440px;
+    display: block;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+
+}
+
 .mainNav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 15px 0; */
+    padding: 15px 0;
     background-color: #FFFFFF;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .18);
-    padding: 15px 50px;
-    border-bottom: 1px solid #efefef;
 }
 
 .brand{

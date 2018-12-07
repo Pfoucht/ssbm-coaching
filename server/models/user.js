@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const userSchema = new Schema({
     email: {type: String, unique: true, required: true},
     username: {type: String, unique: true, required: true},
-    password: {type: String, required: true, select: false},
+    password: {type: String, required: true},
     description: {type: String},
     twitter: {type: String},
     twitch: {type: String},
@@ -23,9 +23,12 @@ userSchema.methods.setPassword = function(password){
 userSchema.methods.validatePassword = function(password){
     console.log('in modELELLE');
     console.log(password);
+    console.log("BEFORE THE RES");
+    console.log(this);
+    const res = bcrypt.compareSync(password, this.password);
 
-    var res = bcrypt.compareSync(password, this.password);
-
+    console.log("AM I GONNA GET A RES?")
+    console.log("Res is " + res);
     return res;
 
     // bcrypt.compare(password, this.password, function(err, res){

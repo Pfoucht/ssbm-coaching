@@ -37,6 +37,7 @@ router.post('/login', (req, res) => {
         if(error || !user){
             res.status(400).json({ error });
             console.log('here');
+            return;
         }
 
         console.log(user);

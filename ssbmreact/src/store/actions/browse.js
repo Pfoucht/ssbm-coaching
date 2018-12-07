@@ -9,7 +9,8 @@ export const fetchGigs = (page = 1) => {
         window.scroll(0, 0);
         dispatch(setBrowsePage(page));
         dispatch(fetchGigsLoading());
-        axios.get('http://localhost:8080/api/browse?page=' + page)
+        setTimeout(() => {
+            axios.get('http://localhost:8080/api/browse?page=' + page)
             .then(res => {
                 console.log(res);
                 dispatch(fetchGigsSuccess(res.data.posts, res.data.totalCount));
@@ -17,6 +18,15 @@ export const fetchGigs = (page = 1) => {
             .catch(err => {
                 dispatch(fetchGigsFail(err));
             })
+        }, 1000)
+        // axios.get('http://localhost:8080/api/browse?page=' + page)
+        //     .then(res => {
+        //         console.log(res);
+        //         dispatch(fetchGigsSuccess(res.data.posts, res.data.totalCount));
+        //     })
+        //     .catch(err => {
+        //         dispatch(fetchGigsFail(err));
+        //     })
     }
 }
 
@@ -47,6 +57,18 @@ export const searchForGigs = (search) => {
     }
 }
 
+export const sortByGame = (game) => {
+    return dispatch => {
+        axios.get('http://localhost:8080/api/browse/sortGame/' + game )
+            .then(res => {
+                dispatch(fetchGigsSuccess(res.data.posts));
+            })
+            .catch((err) => {
+
+            })
+    }
+}
+
 const setBrowsePage = (page) => {
     return {
         type: SET_BROWSE_PAGE,
@@ -67,19 +89,11 @@ const fetchGigsLoading = () => {
     }
 }
 
-<<<<<<< HEAD
 const fetchGigsSuccess = (posts, count) => {
     return {
         type: FETCH_GIGS_SUCCESS,
         posts: posts,
         count: count
-=======
-const fetchGigsSuccess = (posts, search = null) => {
-    return {
-        type: FETCH_GIGS_SUCCESS,
-        posts: posts,
-        search: search
->>>>>>> 3e4160ba93012125ec9036a81e4b097d23c202b4
     }
 }
 

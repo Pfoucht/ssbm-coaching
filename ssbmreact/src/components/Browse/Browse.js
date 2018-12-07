@@ -10,10 +10,14 @@ import Spinner from '../UI/Spinner/Spinner';
 class Browse extends Component {
     constructor(props) {
         super(props);
+        console.log(props);
     }
 
     render() {
         let cards = null;
+        if(this.props.loading){
+            cards = <Spinner/>
+        }
         if(this.props.loading){
             cards = <Spinner/>
         }
@@ -22,12 +26,13 @@ class Browse extends Component {
                 return <Card el={el} />
             })
         };
-
-
+        
         return (
             <div>
                 <section className={styles.browseContainer}> 
-                    <BrowseNavigation/>
+                    <BrowseNavigation
+                        sortByGame={this.props.sortByGame}
+                    />
                     <div className={styles.container}>
                         <div className={styles.flex}>
                             {cards}
@@ -37,7 +42,8 @@ class Browse extends Component {
                             nextPage={this.props.nextPage} 
                             count={this.props.count} 
                             fetchPosts={this.props.fetchPosts} 
-                            page={this.props.page}/>
+                            page={this.props.page}
+                            />
                     </div>
                 </section>
             </div>

@@ -1,30 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './Pagination.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
+import { withRouter } from 'react-router-dom';
 
 
+class Pagination extends Component {
 
-const pagination = (props) => {
 
-    console.log(props);
+    componentDidMount(){
+        console.log(this.props);
+    }
 
+    fetchPageHandler = (page) => {
+        this.props.history.push({
+            search: '?page=' + page
+        })
+
+    }
+
+    render(){
     let numbers = [];
-    let maxCount = Math.ceil(props.count / 12);
+    let maxCount = Math.ceil(this.props.count / 12);
+    if(maxCount <= 1 || !maxCount){
+        return null;
+    }
     for(let i=1; i<=maxCount; i++){
         numbers.push(<div
-             className={props.page == i ? styles.numberActive : styles.number}
-             onClick={() => props.fetchPosts(i)}
+             className={this.props.page == i ? styles.numberActive : styles.number}
+             onClick={() => this.fetchPageHandler(i)}
              >
              {i}</div>)
     }
     return (
         <div className={styles.container}>
         <div className={styles.flex}>
-            {props.page === 1 ?
+            {this.props.page === 1 ?
                 null
                 :
-            <div className={styles.number} onClick={props.fetchPosts(props.page - 1)}>
+            <div className={styles.number} onClick={() => this.fetchPageHandler(this.props.page - 1)}>
                 <IconContext.Provider value={{color: '#373737', size: '1rem'}}>
                 <div>
                     <FaArrowLeft/>
@@ -34,8 +48,8 @@ const pagination = (props) => {
         }
 
             {numbers}
-            {props.page !== maxCount ?
-            <div className={styles.number} onClick={() => props.fetchPosts(props.page + 1)}>
+            {this.props.page !== maxCount ?
+            <div className={styles.number} onClick={() => this.fetchPageHandler(this.props.page + 1)}>
                 <IconContext.Provider value={{color: '#373737', size: '1rem'}}>
                 <div>
                     <FaArrowRight/>
@@ -47,7 +61,9 @@ const pagination = (props) => {
             </div>
         </div>
     )
-
+        }
 };
 
-export default pagination;
+// onClick={() => this.props.fetchPosts(this.props.page + 1)}
+
+export default withRouter(Pagination);

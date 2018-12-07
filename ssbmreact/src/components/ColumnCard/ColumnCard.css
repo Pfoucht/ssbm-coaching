@@ -1,0 +1,106 @@
+
+.card:first-child{
+    border-top: 1px solid #eee;
+}
+
+.card{
+    display: flex;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    padding-right: 15px;
+}
+
+.card:hover{
+    background-color: #f7f8fa;
+}
+
+.imgHolder{
+    min-width: 210px;
+    max-width: 210px;
+    min-height: unset;
+    max-height: unset;
+    height: auto;
+}
+
+.cardImg{
+    box-shadow: 0 0 0 1px hsla(220,7%,92%,.5);
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+
+}
+
+.cardTitle{
+    font-size: 1.25rem;
+    color: #29303b;
+    font-weight: 400;
+}
+
+.cardContent{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.row{
+    width: 80%;
+}
+
+.contentFlex{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cardProfileImg{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+
+.author{
+    color: #686f7a;
+}
+
+.game{
+    display: block;
+    padding: 4px;
+    font-size: 13px;
+    color: #555;
+    padding-left: 0;
+    font-weight: 600;
+    color: #686f7a;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.starContainer{
+    margin-top: 30px;
+}
+
+.cardPricing{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.starNumber{
+    margin-left: 5px;
+    font-size: 14px;
+    color: #686f7a;
+}
+
+.totalRatings{
+    font-size: 14px;
+    margin-top: 5px;
+    color: #686f7a;
+}
+
+.star{
+    margin: 0 1px;
+}

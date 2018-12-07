@@ -12,7 +12,7 @@ const card = (props) => (
         <div className={styles.cardContent}>
             <div className={styles.profileContainer}>
             <img className={styles.profilePic} src={props.el.creator ? props.el.creator.profilePicture : 'https://education.fsu.edu/wp-content/uploads/2018/07/placeholder.png'} />
-            <span className={styles.profileName}>{props.profileName || 'b0aty'}</span>
+            <Link to={"/profile/" + (props.el.creator ?  props.el.creator.username : 'User') } className={styles.profileName}>{props.el.creator ?  props.el.creator.username : 'User'}</Link>
             </div>
             <h5 className={styles.title}>{props.el.title}</h5>
             <span className={styles.game}>{props.el.game}</span>
