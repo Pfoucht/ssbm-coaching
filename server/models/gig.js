@@ -9,7 +9,12 @@ const gigSchema = new Schema({
     game: {type: String},
     characters: [],
     coverPhoto: {type: String},
-    creator: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
+    creator: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    reviews: [
+        {rating: {type: Number},
+        content: {type: String},
+        author: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
+    }]
 });
 
 gigSchema.index({

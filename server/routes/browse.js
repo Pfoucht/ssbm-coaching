@@ -33,15 +33,23 @@ router.get('/', function(req, res, next){
 router.get('/:id', function(req, res, next){
     console.log('running')
     Gig.findById(req.params.id)
-        .then(post => {
-            return res.json({
-                post: post
+        .populate('reviews.author', "-password -gigs -description")
+        
+            .exec((err, post) => {
+                return res.json({
+                    post: post
+                })   
             })
-        })
+        // .then(post => {
+        //     return res.json({
+        //         post: post
+        //     })
+        // })
 });
 
 
 router.get('/search/:search', (req, res, next) => {
+    console.log('running search');
     Gig.find({ $text: {$search: req.params.search}})
         .then(posts => {
             return res.json({
@@ -71,5 +79,10 @@ router.get('/sortGame/:game', (req, res, next) => {
             })
         })
 });
+
+router.get('/filters/sort', (req, res, next) => {
+    console.log('ran');
+    console.log(req.query);
+})
 
 module.exports = router;

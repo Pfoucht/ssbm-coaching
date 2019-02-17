@@ -45,10 +45,13 @@ export const fetchSingleGig = (id) => {
 }
 
 export const searchForGigs = (search) => {
+    alert('running search');
+    alert(search);
     return dispatch => {
         dispatch(fetchGigsLoading());
         axios.get('http://localhost:8080/api/browse/search/' + search)
             .then(res => {
+                console.log(res);
                 dispatch(fetchGigsSuccess(res.data.posts, search));
             })
             .catch(err => {
@@ -65,6 +68,23 @@ export const sortByGame = (game) => {
             })
             .catch((err) => {
 
+            })
+    }
+}
+
+export const sortGigsByFilters = (filters) => {
+    return dispatch => {
+        let queryString = "";
+        for(let key in filters){
+            if(filters[key] !== null){
+                queryString += "?" + key + "=" + filters[key];
+                alert(queryString);
+            }
+
+        }
+        axios.get('http://localhost:8080/api/browse/filters/sort' + queryString)
+            .then(res => {
+                console.log(res);
             })
     }
 }

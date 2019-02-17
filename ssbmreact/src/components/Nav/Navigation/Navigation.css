@@ -26,8 +26,8 @@
 
 
 .pic{
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     object-fit: cover;
     border-radius: 50%;
     cursor: pointer;
@@ -43,18 +43,106 @@
 
 
 .hoverBox{
-    position: absolute;
-    left: -165px;
+    /* position: absolute;
+    left: -205px;
     top: 130%;
     background-color: #fff;
     /* border: 1px solid #cfcfcf; */
-    z-index: 10;
+    /* z-index: 10;
     width: 240px;
     height: auto;
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
     padding: 5px;
+    border: none;
+    border-radius: 0;
+    border-bottom-left-radius: 2px;
+    border-top: 1px solid #e8e9eb;
+    box-shadow: 0 4px 16px rgba(20,23,28,.25);
+    color: #505763;
+    font-size: 13px;
+    margin: 0;
+    position: absolute; */
+    /* top: 100%;
+    left: 0; */
+    /* z-index: 1000; */
+    /* display: none; */
+    /* float: left; */
+    /* min-width: 160px;
+    max-width: calc(100vw - 30px);
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 15px;
+    text-align: left;
+    background-color: #fff;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 4px 16px rgba(20,23,28,.25);
+    background-clip: padding-box; */
+    max-width: calc(130vw - 30px);
+    position: absolute;
+    top: 110%;
+    right: 0;
+    z-index: 1000;
 
+    min-width: 160px;
+    width: 240px;
+    max-width: calc(100vw - 30px);
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 15px;
+    text-align: left;
+    background-color: #fff;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 4px 16px rgba(20,23,28,.25);
+    background-clip: padding-box;
+}
+
+
+.hoverBox::before{
+    /* border-color: transparent;
+    border-bottom-color: red;
+    border-width: 11px;
+    margin-left: -11px;
+    bottom: 100%;
+    left: 80%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border: 11px solid #ccc;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    left: auto;
+    right: 14px; */
+
+    border-color: transparent transparent #e8e9eb;
+    top: -14px;
+    border-style: solid;
+    border-width: 0 10px 13px;
+    content: ""!important;
+    height: 0;
+    position: absolute;
+    right: 14px;
+    width: 0;
+}
+
+.hoverBox::after{
+    left: auto;
+    right: 14px;
+    border-color: transparent transparent #fff;
+    top: -12px;
+    border-style: solid;
+    border-width: 0 10px 13px;
+    content: ""!important;
+    height: 0;
+    position: absolute;
+    width: 0;
 }
 
 .hoverBoxHidden{

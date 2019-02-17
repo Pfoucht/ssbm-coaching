@@ -4,19 +4,43 @@ import Reviews from '../Profile/Reviews/Reviews';
 import { FaBackward } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import OtherCoaches from '../Browse/OtherCoaches/OtherCoaches';
+import { Link } from 'react-router-dom';
+import DetailReview from './DetailReview/DetailReview';
+
 const pic = require('../../assets/dakota.jpg');
 
 
 const GigDetail = props => {
-
+    console.log(props);
     let description = null;
     let pricing = null;
     let rank = null;
+    let reviews = null;
 
     if(props.post){
         description = props.post.description;
         pricing = props.post.pricing;
         rank = props.post.rank;
+    }
+    if(props.post && props.post.reviews && props.post.reviews.length > 0){
+        reviews = (
+            <div>
+            <Reviews reviews={props.post.reviews}/>
+            <Link to={props.post ? "/createreview/" + props.post._id : "createreview"}>
+            <button className={styles.btn}>Be the first to Review</button>
+            </Link>            </div>
+        )
+    }else{
+        reviews = (
+            <div className={styles.box}>
+            <div className={styles.boxTitle}>Yamis Reviews</div>
+            <img className={styles.noReviewImg} src="https://66.media.tumblr.com/4dde219bfe01fb275dca27404d98ce43/tumblr_inline_pfea89kT9y1v1ndyl_540.gif"/>
+            <h2 className={styles.noReviewTitle}>Yami doesnt have any reviews yet</h2>
+            <Link to={props.post ? "/createreview/" + props.post._id : "createreview"}>
+            <button className={styles.btn}>Be the first to Review</button>
+            </Link>
+            </div>
+        )
     }
     return (
         <section className={styles.gigContainer}>
@@ -69,12 +93,7 @@ const GigDetail = props => {
                 </div>
 
                
-                <div className className={styles.box}>
-                <div className={styles.boxTitle}>Yamis Reviews</div>
-                    <img className={styles.noReviewImg} src="https://66.media.tumblr.com/4dde219bfe01fb275dca27404d98ce43/tumblr_inline_pfea89kT9y1v1ndyl_540.gif"/>
-                    <h2 className={styles.noReviewTitle}>Yami doesnt have any reviews yet</h2>
-                    <button className={styles.btn}>Be the first to Review</button>
-                    </div>
+                    {reviews}
 
                 </div>
                 <div className={styles.gigRight}>
@@ -83,6 +102,8 @@ const GigDetail = props => {
                 <input className={styles.input} placeholder="Email"/>
                 <textarea className={styles.textarea} placeholder="Message"/>
                 <button className={styles.btn}>Contact</button>
+                <hr/>
+                <button className={styles.btn}>Save For Later</button>
                 </div>
             </div>
 

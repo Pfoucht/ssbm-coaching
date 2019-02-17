@@ -112,6 +112,12 @@
 .profileName{
     font-size: 14px;
     font-weight: bold;
+    text-decoration: none;
+    color: #222;
+}
+
+.profileName:hover{
+    text-decoration: underline;
 }
 
 .pricing{

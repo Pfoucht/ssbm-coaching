@@ -1,0 +1,32 @@
+
+.wrapper{
+    background-color: #fbfbfb;
+    min-height: 80vh;
+    width: 100%;
+    padding: 30px 0;
+}
+
+
+.container{
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.header{
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.span{
+    text-align: center;
+}
+
+.preview{
+    display: flex;
+    padding: 45px 0;
+    margin: 30px auto;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}

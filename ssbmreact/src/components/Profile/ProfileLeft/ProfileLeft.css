@@ -1,5 +1,5 @@
 .flexOneThird{
-    width: 25.333333%;
+    width: 33.333333%;
 }
 
 .box{
@@ -13,6 +13,9 @@
     margin: -20px -30px 15px -30px;
     background-color: #eee;
     padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .content p{
@@ -47,4 +50,122 @@
 }
 
 
+.profilePic{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    
+    border: 3px solid #eee;
+}
 
+.profileName{
+    margin: 20px 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.contactBtn{
+    background-color: rgb(85, 15, 255);
+    color: #fff;
+    padding: 10px;
+    width: 50%;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.editBtn{
+    background-color: fff;
+    color: #444;
+    border: 1px solid #aaa;
+    padding: 10px;
+    width: 45%;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.editBtn:hover{
+
+}
+
+.hr{
+    border-bottom-color: #eee;
+}
+
+
+.listItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.itemSpan{
+    margin-left: 8px;
+}
+
+.editLink{
+    color: #00698c;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.editLink:hover{
+    text-decoration: underline;
+}
+
+.editBox{
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    font-size: 14px;
+}
+
+.bioTextarea{
+    display: block;
+    background-color: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: none;
+    font-size: inherit;
+    min-height: 100px;
+    resize: none;
+}
+
+.cancelBtn, .submitBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 0 0;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 14px;
+    min-width: 100px;
+    width: 48%;
+    cursor: pointer;
+}
+
+.cancelBtn{
+    border: 1px solid #ccc;
+}
+
+.submitBtn{
+    background-color: #550fff;
+    color: #fff;
+}

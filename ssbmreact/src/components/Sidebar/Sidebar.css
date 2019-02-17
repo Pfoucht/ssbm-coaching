@@ -1,0 +1,83 @@
+.sidebar{
+    margin-right: 60px;
+}
+
+.pricingContainer{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px #cfcfcf solid;
+    padding: 15px 0;
+}
+
+.sign{
+    color: #777;
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.pricingInput{
+    -webkit-appearance: none;
+    background-color: #fff;
+    font: 400 12px helvetica neue,Helvetica,Arial,sans-serif;
+    color: #777;
+    border: 1px #b2b2b2 solid;
+    padding: 6px 7px 7px;
+    margin: 0;
+    resize: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.priceBtn{
+    color: #777;
+    border-color: #b2b2b2;
+    font-size: 22px;
+    padding: 1px 3px 0 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+.to{
+    display: inline-block;
+    margin: 0 10px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+
+.checkBoxContainer{
+    padding: 10px 0;
+    margin: 15px 0;
+    border-bottom: 1px #cfcfcf solid;
+}
+
+.title{
+    line-height: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 14px;
+    color: #0e0e0f;
+    margin-bottom: 10px;
+}
+
+.list{
+    padding: 0;
+    margin: 0;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.label{
+    font-size: 14px;
+    color: #aaa;
+}
+
+.labelSpan{
+    margin-left: 5px;
+    color: #555;
+}

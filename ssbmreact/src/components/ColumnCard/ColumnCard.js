@@ -11,12 +11,12 @@ const columnCard = (props) => {
         <img className={styles.cardImg} src="https://udemy-images.udemy.com/course/240x135/2009974_6de3.jpg"/>
         </div>
         <div className={styles.cardContent}>
-            <h2 className={styles.cardTitle}>Mindset for League of Legends2</h2>
+            <h2 className={styles.cardTitle}>{props.el.title}</h2>
             <div className={styles.contentFlex}>
                 <img className={styles.cardProfileImg} src="https://res.cloudinary.com/ssbm-coaching/image/upload/v1543464884/ME_funp4e.png"/>
                 <span className={styles.author}>CamHeichou</span>
             </div>
-            <span className={styles.game}>Overwatch</span>
+            <span className={styles.game}>{props.el.game}</span>
 
         </div>
         <div className={styles.cardPricing}>

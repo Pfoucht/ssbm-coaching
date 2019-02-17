@@ -24,7 +24,7 @@ class create extends Component {
 
         return (
             <div className={styles.wrapper}>
-                <Nav step={this.props.step}/>
+                <Nav step={this.props.step} highestStep={this.props.highestStep}/>
                 {editor}
             </div>
         )

@@ -7,10 +7,15 @@ import Card from './Card/Card';
 import BrowseNavigation from './Navigation/Navigation';
 import Pagination from './Pagination/Pagination';
 import Spinner from '../UI/Spinner/Spinner';
+import Sidebar from '../Sidebar/Sidebar';
+import BrowseNav from './BrowseNav/BrowseNav';
+
+
+
 class Browse extends Component {
-    constructor(props) {
-        super(props);
-        console.log(props);
+
+    componentDidMount(){
+        console.log(this.props);
     }
 
     render() {
@@ -30,13 +35,20 @@ class Browse extends Component {
         return (
             <div>
                 <section className={styles.browseContainer}> 
+                    <div className={styles.titleContainer}>
+                    <h1 className={styles.title}>Super Smash Bros Melee</h1>
+                    <p className={styles.p}>Learn from the best</p>
+                    </div>
                     <BrowseNavigation
-                        sortByGame={this.props.sortByGame}
+                    hi="hi"
+                    sortByFilters={this.props.sortByFilters}
+                    sortByGame={this.props.sortByGame}
                     />
                     <div className={styles.container}>
-                        <div className={styles.flex}>
-                            {cards}
-                        </div>
+
+                    <div className={styles.flex}>
+                    {cards}
+                    </div>
                         <Pagination 
                             prevPage={this.props.prevPage} 
                             nextPage={this.props.nextPage} 
@@ -55,4 +67,13 @@ class Browse extends Component {
 // Melee Coaches
 // </h4>
 
+// <BrowseNavigation
+// sortByGame={this.props.sortByGame}
+// />
+
 export default Browse;
+
+// <div className={styles.flex}>
+// <Sidebar/>
+// {cards}
+// </div>

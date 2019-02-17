@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import styles from './Navigation.css';
 import { Link } from 'react-router-dom';
+import onClickOutside from 'react-onclickoutside';
 
 const pic = require('../../../assets/dakota.jpg');
 
 class Navigation extends Component {
+
+    handleClickOutside = (e) => {
+        this.setState({
+            dropdownShown: false
+        });
+    }
 
     state = {
         dropdownShown: false
@@ -81,4 +88,4 @@ class Navigation extends Component {
  
 }
 
-export default Navigation;
+export default onClickOutside(Navigation);

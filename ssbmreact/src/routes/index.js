@@ -14,6 +14,8 @@ import BrowseContainer from '../containers/BrowseContainer';
 import ProfileContainer from '../containers/ProfileContainer';
 import ManageGigs from '../components/ManageGigs/ManageGigs';
 import Search from '../components/Search/Search';
+import ReviewContainer from '../containers/ReviewContainer';
+import SearchContainer from '../containers/SearchContainer';
 
   export default () => (
         <Switch>
@@ -24,7 +26,9 @@ import Search from '../components/Search/Search';
             <Route path="/detail/:id" component={GigDetailContainer} />
             <Route path="/inbox" component={InboxContainer} />
             <Route path="/manage" component={ManageGigs} />
-            <Route path="/search" component={Search}/>
+            <Route path="/search/:search" component={SearchContainer}/>
+            <Route exact path="/createreview" component={ReviewContainer}/>
+            <Route path="/createreview/:id" component={ReviewContainer}/>
         </Switch>
   )
 

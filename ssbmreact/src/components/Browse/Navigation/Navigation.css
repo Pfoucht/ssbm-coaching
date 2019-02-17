@@ -9,12 +9,12 @@
 }
 
 .container{
-    max-width: 1060px;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 
@@ -69,4 +69,39 @@
 
 .pricingSelect{
     margin-right: 10px;
+}
+
+.numResults{
+    font-size: 20px;
+    font-weight: 300;
+    margin: 10px;
+}
+
+.myContainer{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.filter{
+    background: #686F7A;
+    border: none;
+    color: #FFF;
+    font-weight: 400;
+    margin-right: 12px;
+    padding: 6px 10px;
+    font-size: 15px;
+    line-height: 1.35135;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.filter::after{
+    content: "\2715";
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.filter:active{
+    background: rgb(120, 126, 136);
 }

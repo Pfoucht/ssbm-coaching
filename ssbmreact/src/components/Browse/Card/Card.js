@@ -19,8 +19,12 @@ const card = (props) => (
             
             <div className={styles.cardFooter}>
                 <span className={styles.spanLeft}>
-                    <IconContext.Provider value={{color: '#550fff', size: '.85rem'}}>
+                    <IconContext.Provider value={{color: '#fcc02e', size: '.85rem'}}>
                     <div>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
                         <FaStar/>
                     </div>
                     </IconContext.Provider>

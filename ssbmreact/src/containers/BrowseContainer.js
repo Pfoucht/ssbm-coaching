@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Browse from '../components/Browse/Browse';
 import { connect } from 'react-redux';
-import { fetchGigs, prevPage, nextPage, sortByGame } from '../store/actions/browse';
+import { fetchGigs, prevPage, nextPage, sortByGame, sortGigsByFilters } from '../store/actions/browse';
 
 class BrowseContainer extends Component{
     
@@ -25,13 +25,21 @@ class BrowseContainer extends Component{
             alert(query);
             this.props.onFetchPosts(query);
         }
-
     }
 
 
     render(){
         return (
-            <Browse sortByGame={this.props.onSortByGame} loading={this.props.loading} nextPage={this.props.onNextPage} prevPage={this.props.onPrevPage} count={this.props.count} posts={this.props.posts} fetchPosts={this.props.onFetchPosts} page={this.props.page}/>
+            <Browse 
+                sortByFilters={this.props.onSortByFilters}
+                sortByGame={this.props.onSortByGame} 
+                loading={this.props.loading} 
+                nextPage={this.props.onNextPage} 
+                prevPage={this.props.onPrevPage} 
+                count={this.props.count} 
+                posts={this.props.posts} 
+                fetchPosts={this.props.onFetchPosts} 
+                page={this.props.page}/>
         )
     }
 }
@@ -53,9 +61,10 @@ const mapDispatchToProps = dispatch => {
                 onFetchPosts: (page) => dispatch(fetchGigs(page)),
                 onPrevPage: () => dispatch(prevPage()),
                 onNextPage: () => dispatch(nextPage()),
-                onSortByGame: (game) => dispatch( sortByGame(game))
+                onSortByGame: (game) => dispatch( sortByGame(game)), 
+                onSortByFilters: (filters) => dispatch(sortGigsByFilters(filters))
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BrowseContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(BrowseContainer); 

@@ -1,0 +1,95 @@
+.userReview{
+    background-color: #fff;
+    padding: 15px 10px;
+    display: flex;
+    border-bottom: 1px solid #eaeaea;
+    align-items: flex-start;
+}
+
+.userReview:last-child{
+    border-bottom: none;
+}
+
+.starContainer{
+    padding: 8px 0 0 0;
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+}
+.reviewStar{
+    color: #550eff;
+    padding: 0 2px;
+}
+.reviewPic{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.reviewP{
+    line-height: 23px;
+    padding: 5px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+.reviewDate{
+    color: #999;
+    font-size: 12px;
+}
+
+.reviewName{
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+.score{
+    display: inline-block;
+    margin-right: 7px;
+    background-color: rgb(85, 15, 255);
+    color: #fff;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+
+.flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* select stuff */
+
+.select{
+    background: #fff url(//assetsv2.fiverrcdn.com/assets/v2_globals/select-caret-88621fe….gif) no-repeat right center;
+    font-size: 14px;
+    color: #555;
+    border: 1px #b2b2b2 solid;
+    border: 1px #ccc solid;
+    padding: 5px 25px 7px 10px;
+    margin: 0;
+    border-radius: 2px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-indent: .01px;
+    text-overflow: '';
+    width: 200px;
+}
+
+.selectContainer{
+    position: relative
+}
+
+.caret{
+    position: absolute;
+    right: 4px;
+    top: 7px;
+}

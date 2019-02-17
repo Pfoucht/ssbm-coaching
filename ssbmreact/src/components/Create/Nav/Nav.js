@@ -34,7 +34,7 @@ const nav = props => {
         <div className={styles.nav}>
             <ul className={styles.navList}>
                 <li className={styles.navItem}>
-                    {props.step === 1 ? active : props.step > 1 ? complete : <span className={styles.navNum}>1</span> }
+                    {props.step === 1 ? active : props.highestStep > 1 ? complete : <span className={styles.navNum}>1</span> }
                     <span>Overview</span>
                     <span className={styles.navCaret}>
                         <IconContext.Provider
@@ -47,7 +47,7 @@ const nav = props => {
                     </span>
                 </li>
                 <li className={styles.navItem}>
-                {props.step === 2 ? active : props.step > 2 ? complete : <span className={styles.navNum}>2</span> }
+                {props.step === 2 ? active : props.highestStep > 2 ? complete : <span className={styles.navNum}>2</span> }
                 <span>Description</span>
                     <span className={styles.navCaret}>
                         <IconContext.Provider
@@ -60,7 +60,7 @@ const nav = props => {
                     </span>
                 </li>
                 <li className={styles.navItem}>
-                {props.step === 3 ? active : props.step > 3 ? complete : <span className={styles.navNum}>3</span> }
+                {props.step === 3 ? active : props.highestStep > 3 ? complete : <span className={styles.navNum}>3</span> }
                 <span>Cover Photo</span>
                 <span className={styles.navCaret}>
                 <IconContext.Provider
@@ -73,7 +73,7 @@ const nav = props => {
             </span>
             </li>
                 <li className={styles.navItem}>
-                {props.step === 4 ? active : props.step > 4 ? complete : <span className={styles.navNum}>4</span> }
+                {props.step === 4 ? active : props.highestStep > 4 ? complete : <span className={styles.navNum}>4</span> }
                     <span>Publish</span>
                 </li>
 

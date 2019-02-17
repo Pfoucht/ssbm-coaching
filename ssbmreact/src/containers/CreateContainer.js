@@ -7,6 +7,7 @@ class CreateContainer extends Component{
     
     state = {
         step: 1,
+        highestStep: 1,
         title: null,
         gigGame: null,
         rank: null,
@@ -20,6 +21,7 @@ class CreateContainer extends Component{
         this.setState(prevState => {
             return {
                 step: 2,
+                highestStep: 2,
                 title: title,
                 gigGame: game,
                 rank: rank,
@@ -35,24 +37,20 @@ class CreateContainer extends Component{
         console.log(description);
         this.setState({
             gigDescription: description,
-            step: 3
+            step: 3,
+            highestStep: 3
         });
     }
 
     finishStepThreeHandler = (fileURL) => {
-        console.log(fileURL);
         this.setState({
             coverPhoto: fileURL,
-            step: 4
+            step: 4,
+            highestStep: 4
         });
     }
 
     publishGigHandler = () => {
-        console.log(this.state);
-        console.log("HERE I AM WILLYAM");
-        console.log(this.state.gigDescription);
-        console.log(this.state);
-        console.log(this.props);
         this.props.onCreateGig(
             this.state.title,
             this.state.gigGame,
@@ -75,7 +73,8 @@ class CreateContainer extends Component{
             <Create 
                 publishGig={this.publishGigHandler} 
                 finishStepThree={this.finishStepThreeHandler} 
-                nextStep={this.nextStepHandler} 
+                nextStep={this.nextStepHandler}
+                highestStep={this.state.highestStep}
                 step={this.state.step} 
                 finishStepTwo={this.finishStepTwoHandler}
                 changeStep={this.changeStepHandler}

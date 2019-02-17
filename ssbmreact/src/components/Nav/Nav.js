@@ -4,10 +4,11 @@ import styles from './Nav.css';
 import Logo from './Logo/Logo';
 import Navigation from './Navigation/Navigation';
 import Auth from '../Auth/Auth';
-import {FaSearch} from 'react-icons/fa';
+import {FaSearch, FaTh} from 'react-icons/fa';
 import {IoMdSearch} from 'react-icons/io';
 import { IconContext } from 'react-icons';
 import { Link, withRouter } from 'react-router-dom';
+
 
 class Nav extends Component {
     state = {
@@ -27,8 +28,7 @@ class Nav extends Component {
     searchHandler = (e) => {
         e.preventDefault();
         this.props.history.push({
-            pathane: '/browse',
-            search: '?search=' + this.state.search
+            pathname: '/search/' + this.state.search
         });
         this.setState({
             search: ''
@@ -42,18 +42,25 @@ class Nav extends Component {
             <div className={styles.mainNav}>
                 <div className={styles.left}>
                 <h1 className={styles.brand}><Link className={styles.link} to="/">coach.gg</Link></h1>
-                <form className={styles.form} onSubmit={this.searchHandler}>
-                <div className={styles.searchIcon}>
-                <IconContext.Provider value={{color: '#807575', size: '18px'}}>
+                <div className={styles.left}>
+                <IconContext.Provider value={{color: '#807575', size: '16px'}}>
                 <div>
-                    <IoMdSearch/>
+                    <FaTh/>
                 </div>
-             </IconContext.Provider>
+                </IconContext.Provider>
+                <span>Games</span>
                 </div>
-                <input className={styles.input} placeholder="Search games or coaches" value={this.state.search} onChange={(e) => this.setState({search: e.target.value})} />
-                <button className={styles.btn} type="submit">Search</button>
+                </div>
+                <form className={styles.form} onSubmit={this.searchHandler}>
+                    <input className={styles.input} placeholder="Search for courses" value={this.state.search} onChange={(e) => this.setState({search: e.target.value})}/>
+                    <div className={styles.searchIcon}>
+                    <IconContext.Provider value={{color: '#807575', size: '20px'}}>
+                    <div>
+                        <IoMdSearch/>
+                    </div>
+                    </IconContext.Provider>
+                    </div>
                 </form>
-                </div>
                 <Navigation  
                     username={this.props.username}
                     profilePicture={this.props.profilePicture} 
@@ -67,3 +74,8 @@ class Nav extends Component {
 }
 
 export default withRouter(Nav);
+
+
+
+// <input className={styles.input} placeholder="Search games or coaches" value={this.state.search} onChange={(e) => this.setState({search: e.target.value})} />
+// <button className={styles.btn} type="submit">Search</button>
