@@ -7,10 +7,10 @@ import {IoMdHome, IoMdBicycle, IoMdContacts } from 'react-icons/io';
 
 const benefits = props => (
     <div className={styles.benefits}>
-        <h1 className={[styles.headingBig, styles.headingBenefit].join(' ')}>Benefits</h1>
+        <h2 className={[styles.headingBig, styles.headingBenefit].join(' ')}>Benefits</h2>
         <div className={styles.flexbox}>
             <div className={styles.col}>
-                <IconContext.Provider value={{color: '#373737', size: '7rem'}}>
+                <IconContext.Provider value={{color: 'black', size: '7rem'}}>
                 <div>
                     <IoMdContacts/>
                 </div>
@@ -19,7 +19,7 @@ const benefits = props => (
                 <p className={styles.para}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. </p>
             </div>
             <div className={styles.col}>
-                <IconContext.Provider value={{color: '#373737', size: '7rem'}}>
+                <IconContext.Provider value={{color: 'black', size: '7rem'}}>
                 <div>
                     <IoMdBicycle/>
                 </div>
@@ -28,7 +28,7 @@ const benefits = props => (
                 <p className={styles.para}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. </p>
             </div>
             <div className={styles.col}>
-                <IconContext.Provider value={{color: '#373737', size: '7rem'}}>
+                <IconContext.Provider value={{color: 'black', size: '7rem'}}>
                 <div>
                     <IoMdHome/>
                 </div>
@@ -39,8 +39,5 @@ const benefits = props => (
         </div>
     </div>
 );
-
-// <img className={styles.iconHolder} src="https://cdn3.iconfinder.com/data/icons/solidix-toys/128/toy_children-22-512.png" />
-
 
 export default benefits;

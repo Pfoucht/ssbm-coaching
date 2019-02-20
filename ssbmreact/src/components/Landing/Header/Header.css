@@ -1,94 +1,96 @@
-.header{
-    background-color: #eee;
-    padding: 120px 0 0 0;
-    min-height: 50vh;
+.header {
+    padding: 125px 20px;
     overflow: hidden;
+    background-color: #eee;
+    background-image: url('../../../assets/marth_hero_resized.png');
+    background-repeat: no-repeat;
+    background-position: 77% -83%;
 }
 
-.container{
+.container {
     max-width: 1080px;
-    height: 100%;
     margin: 0 auto;
-    display: flex;
 }
 
-.containerLeft{
-    width: 45%;
+.row {
+    width: 50%;
 }
 
-.headingBig{
-    color: #000;
-    font-weight: 900;
-    font-size: 32px;
+.heading {
+    margin-bottom: 15px;
+}
+
+.subHeading {
+    font-size: 1.8rem;
+    font-weight: 300;
     margin-bottom: 25px;
 }
 
-.headingMedium{
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 25px;
-}
-
-.p{
+.desc {
     line-height: 20px;
     margin-bottom: 30px;
 }
 
-.btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btn {
+    display: inline-block;
     padding: 12px 48px;
     border-radius: 3px;
-    background-color: #550fff;
+    border: none;
+    background-color: #267abd;
     color: #fff;
-    font-size: 16px;
+    font-size: 1.4rem;
     cursor: pointer;
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, .3);
+    transition: background-color 350ms ease;
 }
 
-.containerRight{
+.btn:hover {
+    background-color: #214663;
+}
+
+.containerRight {
     flex: 1;
     position: relative;
 }
 
-.headerImg{
+.headerImg {
     position: absolute;
     bottom: -345px;
     right: 0;
     width: 75%;
 }
 
-@media only screen and (max-width: 768px){
-    .container{
+@media only screen and (max-width: 768px) {
+    .container {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         
     }
 
-    .containerLeft{
+    .containerLeft {
         width: 90%;
         text-align: center;
     }
 
-    .containerRight{
+    .containerRight {
         width: 90%;
         height: 300px;
     }
-    .headerImg{
+    .headerImg {
         width: 80%;
         position: absolute;
         bottom: -170px;
         left: 50%;
         transform: translateX(-50%);
     }
-    .btn{
+    .btn {
         margin: 0 auto;
     }
 }
 
-@media only screen and (max-width: 568px){
-    .headerImg{
+@media only screen and (max-width: 568px) {
+    .headerImg {
         bottom: -30px;
     }
 }
