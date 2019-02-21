@@ -1,9 +1,4 @@
-/*CSS RESETS*/
-
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// Resets and default base stylings
 
 html, 
 body {
@@ -11,9 +6,10 @@ body {
 	padding: 0;
 	border: 0;
 	font-size: 62.5%;
-	font-family: 'Lato', sans-serif;
+    font-family: 'Raleway', sans-serif;
+	color: $font-primary;
 	vertical-align: baseline;
-	line-height: 1.2;
+    line-height: 1.2;
 }
 
 div, span, applet, object, iframe,
@@ -33,28 +29,28 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 1.6rem;
-    font-family: 'Lato', sans-serif;
 	vertical-align: baseline;
 }
 
 h1 {
 	font-size: 3.2rem;
-	font-weight: 500;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
 }
 
 h2 {
-	font-size: 2.6rem;
-	font-weight: 300;
+	font-size: 2.8rem;
+    font-weight: 500;
 }
 
 h3 {
-	font-size: 2.2rem;
-	font-weight: 300;
+    font-size: 2.4rem;
+	font-weight: 500;
 }
 
 h4 {
-	font-size: 2rem;
-	font-weight: 300;
+    font-size: 2.4rem;
+	font-weight: 400;
 }
 
 h5 {
@@ -68,14 +64,21 @@ h6 {
 }
 
 p {
-	font-size: 1.6rem;
-	font-weight: 300;
+	font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+    letter-spacing: .3px;
 }
 
 a {
+	color: $a-primary;
 	font-size: 1.6rem;
-	font-weight: 500;
+	font-weight: 700;
 	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -106,5 +109,4 @@ table {
 /* App styling */
 *, *:before, *:after {
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
 }

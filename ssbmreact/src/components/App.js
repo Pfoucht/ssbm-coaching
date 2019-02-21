@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import NavContainer from '../containers/NavContainer.js';
 import AuthContainer from '../containers/AuthContainer';
 import Footer from '../components/Footer/Footer';
-import './App.css';
+import './App.scss';
 import { checkAuthState } from '../store/actions';
 import { withRouter } from 'react-router-dom';
 
