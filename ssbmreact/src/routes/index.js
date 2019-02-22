@@ -5,7 +5,7 @@ import {
     Switch
   } from 'react-router-dom';
 
-import Landing from '../components/Landing/Landing';
+import Landing from '../pages/Landing/Landing'
 import Browse from  '../components/Browse/Browse';
 import Create from '../containers/CreateContainer';
 import GigDetailContainer from '../containers/GigDetailContainer';
@@ -16,6 +16,7 @@ import ManageGigs from '../components/ManageGigs/ManageGigs';
 import Search from '../components/Search/Search';
 import ReviewContainer from '../containers/ReviewContainer';
 import SearchContainer from '../containers/SearchContainer';
+import Registration from '../pages/Onboarding/Onboarding';
 
   export default () => (
         <Switch>
@@ -29,6 +30,7 @@ import SearchContainer from '../containers/SearchContainer';
             <Route path="/search/:search" component={SearchContainer}/>
             <Route exact path="/createreview" component={ReviewContainer}/>
             <Route path="/createreview/:id" component={ReviewContainer}/>
+            <Route path="/register" component={Registration}/>
         </Switch>
   )
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Header.scss';
 
-import Link from '../../UI/Link';
+import Link from '../../../components/UI/Link';
 
 const header = props => (
     <header className={styles.header}>
