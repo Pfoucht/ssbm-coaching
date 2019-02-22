@@ -1,22 +1,24 @@
 // All variations of buttons belong here
 
-:global(.btn) {
-    display: inline-block;
-    padding: 12px 48px;
-    border-radius: 2px;
-    min-width: 120px;
-    border: none;
-    background-color: $btn-primary;
-    color: #fff;
-    font-size: 1.4rem;
-    cursor: pointer;
-    box-shadow: $btn-shadow;
-    transition: background-color 350ms ease;
-    text-decoration: none;
-    letter-spacing: .3px;
 
-    &:hover {
-        background-color: darken($btn-primary, 20%);
-        text-decoration: none;
-    }
-}
+// Removed while we try out configurable UI components 
+// :global(.btn) {
+//     display: inline-block;
+//     padding: 12px 48px;
+//     border-radius: 2px;
+//     min-width: 120px;
+//     border: none;
+//     background-color: $btn-primary;
+//     color: #fff;
+//     font-size: 1.4rem;
+//     cursor: pointer;
+//     box-shadow: $btn-shadow;
+//     transition: background-color 350ms ease;
+//     text-decoration: none;
+//     letter-spacing: .3px;
+
+//     &:hover {
+//         background-color: darken($btn-primary, 20%);
+//         text-decoration: none;
+//     }
+// }

@@ -9,15 +9,18 @@ $font-light: $grey-6;
 $font-grey: $grey-8;
 $font-white: $white;
 
-// links
-$a-primary: $prime-blue;
-$a-secondary: pink; 
-$a-tertiary: pink; 
-
 // buttons
-$btn-primary: $prime-blue;
-$btn-secondary: #000;
+$btn-primary: #6534ff;
+$btn-secondary: #62bcfa;
+$btn-tertiary: #fccdd3;
 $btn-shadow: 0 4px 6px 0 hsla(0, 0, 0, .2);
+$btn-radius: 2px;
+$btn-time: 350ms;
+
+// links
+$a-primary: $btn-primary;
+$a-secondary: $btn-secondary; 
+$a-tertiary: pink; 
 
 // shadows
 $shadow: 0 4px 6px 0 hsla(0, 0, 0, .2);

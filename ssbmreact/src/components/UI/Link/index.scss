@@ -1,0 +1,79 @@
+@import '../../App.scss';
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    min-width: 80px;
+    border: none;
+    border-radius: $btn-radius;
+    min-width: 140px;
+    font-size: 1.4rem;
+    letter-spacing: .4px;
+    text-align: center;
+    text-decoration: none;
+    color: $btn-primary;
+    box-shadow: $btn-shadow;
+    transition: background-color $btn-time ease;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &.primary {
+        padding: 10px 17px;
+        color: $white;
+        background-color: $btn-primary;
+
+        &:hover {
+            background-color: darken($btn-primary, 25%);
+        }
+    }
+
+    &.secondary {
+        padding: 10px 17px;
+        color: $white;
+        background-color: $btn-secondary;
+
+        &:hover {
+            background-color: darken($btn-secondary, 25%);
+        }
+    }
+
+    &.outline {
+        display: inline-block;
+        padding: 9px 16px;
+        border: 2px solid $btn-primary;
+        border-radius: $btn-radius;
+        background-color: transparent;
+        transition: background-color $btn-time ease, color $btn-time ease;
+        box-shadow: none;
+    
+        &:hover {
+            color: $white;
+            background-color: $btn-primary;
+        }
+    }
+}
+
+.btn--outline {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 2px solid $btn-primary;
+    border-radius: $btn-radius;
+    background-color: transparent;
+    transition: background-color $btn-time ease, color $btn-time ease;
+
+    &:hover {
+        color: $white;
+        background-color: $btn-primary;
+    }
+}
+
+.link {
+
+    &.secondary {
+
+    }
+
+}
